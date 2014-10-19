@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Upload Book</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+.container {
+  margin-top:60px;/* 正文 */
+}
+h1 {
+word-wrap: break-word;
+display: block;
+font-size: 25px;
+font-weight: bold;
+color: #494949;
+margin: 0;
+padding: 0 0 15px 0;
+line-height: 1.1;
+}
+.form {
+  max-width: 100px;
+}
+.big-text {
+  height: 200px;
+  word-wrap: break-word;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+    <a class="navbar-brand" href="#">Brand</a> </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active"> <a href="#">Link</a> </li>
+      <li> <a href="#">Link</a> </li>
+    </ul>
+    <form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li> <a href="#">Link</a> </li>
+      <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+        <ul class="dropdown-menu">
+          <li> <a href="#">Action</a> </li>
+          <li> <a href="#">Another action</a> </li>
+          <li> <a href="#">Something else here</a> </li>
+          <li class="divider"> </li>
+          <li> <a href="#">Separated link</a> </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container ">
+  <div class="row clearfix">
+    <div class="col-md-8 column">
+      <h1>添加书籍</h1>
+      <form role="form" action="" method="POST">
+        <div class="form-group">
+           <label for="exampleInputEmail1">书名</label><input type="text" class="form-control" name="exampleInputEmail1" />
+        </div>
+        <div class="form-group">
+           <label for="exampleInputPassword1">作者</label><input type="text" class="form-control" name="author" />
+        </div>
+        <div class="form-group">
+           <label for="exampleInputPassword1">出版社</label><input type="text" class="form-control" name="press" />
+        </div>
+        <div class="form-group">
+           <label for="exampleInputPassword1">内容简介</label><textarea name="content" class="form-control"  rows="5"></textarea>
+        </div>
+<div class="form-group">
+           <label for="exampleInputFile">封面上传</label><input type="file" name="image" />
+          <p class="help-block">
+            请选择多大多大的图片
+          </p>
+        </div>
+        <button type="submit" class="btn btn-default">确认</button>
+      </form>
+    </div>
+    <div class="col-md-4 column">
+    <dl>
+        <dt>
+          完善资料  · · · · · ·
+        </dt>
+        <dd>
+          请尽量使填写的信息内容和书籍本身一致，在格式上请参照输入框右侧的样例。
+        </dd>
+      </dl>
+     </div>
+  </div>
+</div>
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>
