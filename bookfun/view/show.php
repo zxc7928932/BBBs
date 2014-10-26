@@ -147,7 +147,8 @@
                             </ul>
                         </div>
 
-                        <div id="js-comment-box" class="comment-box">
+                        <div class="comment-box">
+                            <div id="js-comment-box"> 
 <?php 
     $sql1=mysql_query("selcect * from comment where book_id='$id' orede  order by id ");                        //检索评论
     $row1=mysql_fetch_object($sql1);
@@ -159,7 +160,7 @@
                                 <div class="comment-title">
                                     <div class="image">
                                       
-                                            <img src="$row2->Photo</img>" alt="user image"><?php echo $row2->Username?></a>
+                                            <img src="$row2->Photo</img>" alt="user image"><?php echo $row2->nickname?></a>
                                     </div>
                                 </div>
                                 <div class="comment-message">
@@ -174,11 +175,10 @@
     $row1=mysql_fetch_object($sql1);
     }
 ?>
-
-                            <div class="comment-footer">
-                    <a class="js-more-discussion" href="javascript:;">显示更早的讨论</a>
-            </ul>
-        </div>
+                    </div>
+                    <div class="comment-footer">
+                        <a class="js-more-discussion" href="javascript:;">显示更早的讨论</a>
+                    </div>
 
                         </div>
                         <!-- box --> </div>
@@ -221,14 +221,31 @@
 <!-- Bootstrap WYSIHTML5 -->
 <script src="js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
 <script type="text/javascript">
+            var comment_count = 3;
             $(function() {
                 //bootstrap WYSIHTML5 - text editor
                 $(".textarea").wysihtml5();
 
-                    $(".js-more-discussion").click( function(){  
-                        alert("1111111");
-                    }); 
+                $(".js-more-discussion").click( function(){  
+                        $.getJSON("../action/showmore.php",  {bookid:<?php $row->id;?>, cnt: comment_count},
+                               function(data){
+                                    comment_count += data.length; 
 
+                                    $.each(data, function(i,item){
+                                        content = '<div class="comment"><div class="comment-title"><div class="image"><a ' + 
+                                         ' title="' + 
+                                        item.nickname +  '"> <img src="'+
+                                        item.image_url +  '" alt="user image">' + 
+                                        item.nickname + 
+                                        '</a></div></div><div class="comment-message">' + 
+                                        '<p>'+ item.comment + '</p>'
+                                        '</div></div>';
+
+                                        $("#js-comment-box").append(content);  
+                                    })
+                                  })
+
+                }); 
 
             });
 

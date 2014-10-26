@@ -9,7 +9,7 @@
     <script src="js/jquery-1.11.1.min.js"></script> 
     <script src="js/bootstrap.min.js"></script>
     <style type="text/css">
-
+<?php $_SESSION['bname'];?>
     body,ul,p,h1,h2,form,select,input{
         margin:0;
         padding:0;
@@ -63,13 +63,13 @@
               <li> 书籍 </li>
            </ul>
 
-           <form class="navbar-form navbar-right" role="search" action="../action/search.php" method="get">
+           <form class="navbar-form navbar-right" role="search" action="../action/search.php" method="post">
 
               <div class="form-group" id="nav-search">
                  <input type="text" name="txt_book" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
               </div>
 
-              <button type="submit"  class="btn btn-default" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
+              <button type="submit" name="submit" value="submit" class="btn btn-default" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
            </form>
 
           <ul class="nav navbar-nav navbar-right">

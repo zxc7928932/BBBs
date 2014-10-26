@@ -7,7 +7,12 @@
 <meta name="Description" content="兴趣书籍论坛">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <script type="text/javascript" src="bootstrap.js"></script>
-
+ <?php 
+              session_start();
+              if($_POST["submit"]!=""){
+              $_SESSION['bname']=$_POST[txt_book];
+}
+              ?>
 <style type="text/css">
 body,ul,p,h1,h2,form,select,input {
     margin: 0;
@@ -101,7 +106,7 @@ following is based on your keywords </small></h3>
 
 <div class="row">
 <?php
-    session_start();
+    
     $uid=$_SESSION['number'];
     $uid=9;
     $link=mysql_connect("localhost","root","zxc7928932")or die("数据库服务器连接错误".mysql_error());//链接数据库
