@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>收藏中心</title>
-
+	<meta charset="utf-8">
 	<meta name="Author" content="Soleil-kk">
 	<meta name="Keywords" content="book.fun">
 	<meta name="Description" content="兴趣书籍论坛">
@@ -119,18 +119,19 @@
     mysql_select_db("guestinfo",$link) or die("数据库访问错误".mysql_error());    //选择数据库
     mysql_query("set names gb2312");                                            //选择字符集标准格式
 	$u_id=$_SESSION['number'];
+	
 	if($page==""){         //如果页数还未赋值，给其初始值1
 		$page=1;
 	}
   	$page_size=6;         //设置每页显示信息数
   	$offset=($page-1)*$page_size;            //计算下一页从第几条数据开始循环 
-  	$sql=mysql_query("select * from collection where user = $u_id order by id ");//找到当前用户的收藏
+  	$sql=mysql_query("select * from collection where user = $u_id  ");//找到当前用户的收藏
   	$rows=mysql_num_rows($sql);													//得到用户收藏的数量
-  	$sql=mysql_query("select * from collection where user = $u_id order by id limit $offset,$page_size ");
+  	$sql=mysql_query("select * from collection where user = $u_id  limit $offset,$page_size ");
   	$count=ceil($rows/$page_size);						//计算页数
   	$row=mysql_fetch_object($sql); //得到数据库中此成员
   	if($row==false){        //未找到数据 
-  		echo"<font color ='red'>暂无书籍信息！</font>";
+  		echo"<font color ='red'>暂无收藏信息！</font>";
   	}
   	else{         
   		do{

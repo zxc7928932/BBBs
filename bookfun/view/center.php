@@ -1,14 +1,15 @@
 
 <html>
 <head>
-    <title>首页-book.fun</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="Author" content="Soleil-kk">
     <meta name="Keywords" content="book.fun">
     <meta name="Description" content="兴趣书籍论坛">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <script language="javascript"  src="bootstrap.js"></script>
     
+    <script src="js/jquery-1.11.1.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script>
+    <script language="javascript"  src="bootstrap.js"></script>
     <style type="text/css">
 
     body,ul,p,h1,h2,form,select,input{
@@ -18,47 +19,81 @@
     img{
         border:none;
     }
-    li{
-        list-style: none;
-    }
-    body{
-        background: #fff url(bg.png); 
-        background-repeat:repeat-x;
-    }
-
-    label{
-       font-size: 18px;
-    }
-
+   
     .form-group{
        width: 30%;
        margin-left: 100px;
     }
 
-    h1{
-       margin:50px 0px 30px 180px;
-       font-size:200%;
-       font-weight: bold;
-       color: #1874CD;
+    #nav-search{
+      margin:0;
+      margin-right: 10px;
     }
 
-    #btn1{
-      width:10%;
-      margin-top: 30px;
-      margin-left: 130px;
+    #book_img{
+      width:150px;
+      height: 150px;
     }
+   
 
-    #btn2{
-      width:10%;
-      margin-left: 60px;
-      margin-top: 30px;
-    }
-
-
-
-    </style>
+</style>
 
 </head>
+
+<body>
+
+   <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+         
+          </button>
+            <a class="navbar-brand" href="home.php" style="font-size:25px;font-weight:bold;color:#AAAAAA;">
+            Book.fun
+              
+            </a> 
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background:  #0F0F0F;">
+
+           <ul class="nav navbar-nav">
+              <li > 
+              <a href="home.php">
+                <span class="glyphicon glyphicon-home"></span>
+                 首页
+              </a>
+               </li>
+              <li> <a href="upload.php">
+                    <span class="glyphicon glyphicon-cloud-upload"></span>
+
+                     上传书籍
+                   </a> 
+              </li>
+           </ul>
+
+           <form class="navbar-form navbar-right" role="search" action="../action/search.php" method="post">
+
+              <div class="form-group" id="nav-search">
+                 <input type="text" name="txt_book" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
+           </form>
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <li style="margin-left:50px;">
+              <a href="center.php">
+                <span class="glyphicon glyphicon-user">
+                  个人中心
+              </a> 
+            </li>
+
+           </ul>
+      </div>
+   </nav>
+
+
 
 <?php
   session_start();
@@ -150,7 +185,7 @@
   <div id="content">
       
          
-        <form role="form" enctype="multipart/form-data"  action="../action/person_data1.php" method="post" onsubmit="return check(this);">
+        <form   role="form" enctype="multipart/form-data"   action="../action/person_data1.php" method="post" onsubmit="return check(this);">
 
               <div class="form-group">
               <label for="nickname">昵称：</label>
