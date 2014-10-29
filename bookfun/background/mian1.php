@@ -1,7 +1,7 @@
 <?php
 	include("function.php");	
 	session_start();						//开启session
-	if($_POST["submit"]!=""){				//已提交
+	if($_POST["Submit"]!=""){				//已提交
 	$checks=$_POST["checks"];				
 	if($checks==""){
 	//验证码为空，回跳
@@ -37,7 +37,4 @@
 	}
 	}
 	}
-else{
-echo "<script> alert('您输入的验证码为空!');window.location.href='main.php';</script>";
-}
 ?>
