@@ -12,7 +12,8 @@
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background:  #0F0F0F;"
+></button>
             <a class="navbar-brand" href="home.html" style="font-size:25px;font-weight:bold;color:#AAAAAA;">
                 <span class="glyphicon glyphicon-home"></span>
                 Book.fun
@@ -58,7 +59,7 @@
 
     $result=mysql_query("select * from collection where user=$uid and book=$id");
     $num = mysql_num_rows($result);
-
+    $_SESSION['boo_id']=$id;
     
 ?>
     <div class="container center-container">
@@ -150,17 +151,43 @@
                         <div class="comment-box">
                             <div id="js-comment-box"> 
 <?php 
-    $sql1=mysql_query("selcect * from comment where book_id='$id' orede  order by id ");                        //检索评论
+    $sql1=mysql_query("select * from comment where book_id= $id order by comment_id desc ");                        //检索评论
     $row1=mysql_fetch_object($sql1);
-    for($i=0;$i<3;$i++){
-    $sql2=mysql_query("selcect * from register where uid='$row1->user'");
+    $num=mysql_num_rows($sql1);
+    if($num<3){
+    for($i=0;$i<$num;$i++){
+    $sql2=mysql_query("select * from register where uid='$row1->user'");
     $row2=mysql_fetch_object($sql2);
 ?>
                             <div class="comment">
                                 <div class="comment-title">
                                     <div class="image">
                                       
-                                            <img src="$row2->Photo</img>" alt="user image"><?php echo $row2->nickname?></a>
+                                            <img src=<?php echo $row2->Photo;?> alt="user image"><?php echo $row2->nickname?></a>
+                                    </div>
+                                </div>
+                                <div class="comment-message">
+                                    <p>
+                                        <?php echo $row1->content?>
+                                    </p>
+                                </div>
+                            </div>
+                            
+
+<?php 
+    $row1=mysql_fetch_object($sql1);
+    }
+}
+else
+ for($i=0;$i<3;$i++){
+    $sql2=mysql_query("select * from register where uid='$row1->user'");
+    $row2=mysql_fetch_object($sql2);
+?>
+                            <div class="comment">
+                                <div class="comment-title">
+                                    <div class="image">
+                                      
+                                            <img src=<?php echo $row2->Photo;?> alt="user image"><?php echo $row2->nickname?></a>
                                     </div>
                                 </div>
                                 <div class="comment-message">
@@ -200,10 +227,10 @@
                             <!-- tools box --> </div>
                         <!-- /.box-header -->
                         <div class='box-body pad' >
-                            <form action="" method="post" >
-                                <textarea class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                            <form name="form1"action="../action/setcomment.php" method="post" >
+                                <textarea name="comment" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                 <div class="footer" style="margin-top:10px;">
-                                    <button type="submit" class="btn btn-success">提交</button>
+                                    <button type="submit" class="btn btn-success" onClick="return check1(form1);">提交</button>
                                 </div>
                             </form>
                         </div>
@@ -227,7 +254,7 @@
                 $(".textarea").wysihtml5();
 
                 $(".js-more-discussion").click( function(){  
-                        $.getJSON("../action/showmore.php",  {bookid:<?php $row->id;?>, cnt: comment_count},
+                        $.getJSON("../action/showmore.php",  {bookid:<?php echo $row->id;?>, cnt: comment_count},
                                function(data){
                                     comment_count += data.length; 
 
@@ -254,3 +281,18 @@
         </script>
 </body>
 </html>
+<script language="javascript">                                              //检测各信息是否正确
+/*检测各值是否为空*/
+function check1(form){
+    if(form.comment.value==""){
+        alert("请输入评论");form.comment.focus();return false;
+    }
+     
+    if(form.comment.value.length>250){
+        alert("评论过长!");form.comment.focus();return false;
+    }
+    if(form.comment.value.length<5){
+        alert("评论过短!");form.comment.focus();return false;
+    }
+}
+</script>

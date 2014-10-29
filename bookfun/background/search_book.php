@@ -75,7 +75,7 @@ form.submit();
                         echo "...";
                         ?></td>
                           <td align="center"><a href="check_del_ok.php?id=<?php echo $row->id;?>"><img src="images/delete.gif" width="22" height="22" border="0"></a></td>
-						                      
+						 <td align="center"><a href="check_comment.php?id=<?php echo $row->id;?>"><img src="images/update.gif" width="22" height="22" border="0"></a></td>                          
                       </tr>
 					<?php
 					}while($row=mysql_fetch_object($sql));

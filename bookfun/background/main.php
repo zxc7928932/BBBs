@@ -73,7 +73,7 @@
                  <input type="text" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
               </div>
 
-              <button type="submit" class="btn btn-default" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
+              <button type="submit" name="submit" value="submit"class="btn btn-default" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
            </form>
 
            <ul class="nav navbar-nav navbar-right">
@@ -114,7 +114,7 @@
            
          </div>
   
-        <button name="Submit" type="submit" class="btn btn-primary btn-lg " onClick="return check7(form8);" style="margin-left:100px; width:30%;">
+        <button name="submit" type="submit" value="submit" class="btn btn-primary btn-lg " onClick="return check7(form8);" style="margin-left:100px; width:30%;">
            提交
         </button>
  
