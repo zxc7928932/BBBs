@@ -175,17 +175,44 @@
     $user=$_SESSION['number'];
     $link=mysql_connect("localhost","root","zxc7928932")or die("数据库服务器连接错误".mysql_error());//链接数据库
     mysql_select_db("guestinfo",$link) or die("数据库访问错误".mysql_error());    //选择数据库
-    mysql_query("set names gb2312"); 
-    $user=1;     
-    $sql=mysql_query("select * from collection where user=$user limit 1,3");
+    mysql_query("set names utf8");    
+    $sql=mysql_query("select * from collection where user = $user limit 0,3 ");
     $num=mysql_num_rows($sql);
     $row=mysql_fetch_object($sql);
     if($num==0){
-      //暂无收藏信息
+      echo '暂无收藏信息';
     }
     else{
     do{
       $bookid=$row->book;
+      $sql1=mysql_query("select * from books where id=$bookid");
+      $row1=mysql_fetch_object($sql1);
+      $title=$row1->bookname;
+?>
+           <li><a href="show.php?id=$bookid"><?php echo $title ;?></a></li>
+           
+      <?php }while($row=mysql_fetch_object($sql));
+    }?>
+        </ol>
+ </div>
+
+ <div class="page-header" style="margin:100px 0px 10px 1100px;">
+        <h6><span class="glyphicon glyphicon-signal"></span>
+          <a href="../action/show_collection.php">最热图书</a>          <!--我的全部收藏链接-->
+           <small>top3</small> 
+        </h6>
+        <ol>
+<?php 
+
+    $sql=mysql_query("select * from books order by count desc limit 0,3 ");
+    $num=mysql_num_rows($sql);
+    $row=mysql_fetch_object($sql);
+    if($num==0){
+      echo '暂无图书上传';
+    }
+    else{
+    do{
+      $bookid=$row->id;
       $sql1=mysql_query("select * from books where id=$bookid");
       $row1=mysql_fetch_object($sql1);
       $title=$row1->bookname;
@@ -208,7 +235,7 @@
  </div>
 <?php
     include("../action/function.php");
-    $query="select * from books order by id desc limit 1,6";
+    $query="select * from books order by id desc limit 0,6";
     $sql2=mysql_query($query);
     $row2=mysql_fetch_object($sql2); //得到数据库中此成员
     do{

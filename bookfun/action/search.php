@@ -119,11 +119,23 @@ following is based on your keywords </small></h3>
     $_SESSION['bname']=$_POST[txt_book];
     $book_name=$_POST[txt_book];
     }
-    $book_name=trim($book_name);
-    $name_arr=explode(" ",$book_name,3);        //将空格输入的搜索信息 由空格作为方格 分别传入数组
-    $cache_count=count($name_arr);            //计算数组长度（数组长度是搜索信息分段数）
 
-    if($book_name==""){
+    $name_arr = explode(" ",$book_name); //用空格分解搜索内容
+    $num = count($name_arr);  //得到分解得到的信息条数
+    $cnt = 0; //非空格信息数
+    $info = " "; //查询条件
+    for($i=0; $i<$num; $i++)
+    {
+        if(strlen($name_arr[$i]))
+        {
+            $cnt ++;
+            if($cnt == 1)
+                $info .= "bookname like '%$name_arr[$i]%'";
+            else
+                $info .= "or bookname like '%$name_arr[$i]%'";
+        }
+    }
+    if($cnt == 0){
     echo"请输入书名";
 }
     else{
@@ -133,28 +145,12 @@ following is based on your keywords </small></h3>
     $page_size=6;         //设置每页显示信息数
     $offset=($page-1)*$page_size;            //计算下一页从第几条数据开始循环
 
-    if($cache_count==1){      //如果数组长度为一 寻找与其相似的值
-        $sql=mysql_query("select * from books where bookname like '%$book_name%'  order by id desc ");
-        $rows=mysql_num_rows($sql);
-        $sql=mysql_query("select * from books where bookname like '%$book_name%'  order by id desc limit $offset,$page_size ");
-    }
-    else if($cache_count==2){   //寻找与数组成员 1,2相似的值
-        $name_arr[0]=trim($name_arr[0]);
-        $name_arr[1]=trim($name_arr[1]);
-        $sql=mysql_query("select * from books where bookname like '%$name_arr[0]%' or bookname like '%$name_arr[1]%'");
-        $rows=mysql_num_rows($sql);
-        $sql=mysql_query("select * from books where bookname like '%$name_arr[0]%' or bookname like '%$name_arr[1]%' limit $offset,$page_size");
 
-    }
-    else{             //寻找与数组成员1,2,3相似的值
-        $name_arr[0]=trim($name_arr[0]);
-        $name_arr[1]=trim($name_arr[1]);
-        $name_arr[2]=trim($name_arr[2]);
-        $sql=mysql_query("select * from books where bookname like '%$name_arr[0]%' or bookname like '%$name_arr[1]%' or bookname like '%$name_arr[2]%' ");
-        $rows=mysql_num_rows($sql);
-        $sql=mysql_query("select * from books where bookname like '%$name_arr[0]%' or bookname like '%$name_arr[1]%' or bookname like '%$name_arr[2]%' limit $offset,$page_size");
+    $sql=mysql_query("select * from books where $info");
+    $rows=mysql_num_rows($sql);
+    $sql=mysql_query("select * from books where $info limit $offset,$page_size");
 
-    }
+
     $count=ceil($rows/$page_size);
     $row=mysql_fetch_object($sql); //得到数据库中此成员
     if($row==false){        //未找到数据

@@ -14,6 +14,14 @@
 		echo "<script> alert('系统繁忙，请重试!');window.location.href='../view/show.php?id=$id';</script>";
 	}
 	else{
+		$sql=mysql_query("select * from books where id = $id");
+  		$row=mysql_fetch_object($sql); 
+  		$num = $row->count;
+  		$num ++;
+  		$sql=mysql_query("update books set count = $num where id = $id");
+  		if(!$sql){
+			echo "<script> alert('系统繁忙，请重试!');window.location.href='../view/show.php?id=$id';</script>";
+		}
 		echo "<script> alert('评论成功!');history.back();</script>";
 	}
 	unset ($_SESSION['boo_id']) ;
