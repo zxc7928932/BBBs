@@ -6,6 +6,8 @@ class MainPageAction extends Action
 	{
 		header("Content-Type:text/html; charset=utf-8");
 		$uid = session('uid');
+		if(!$uid)
+			$this->error('请先登录！',U('Login/index'));
 		$Collection = D('collection');
 		$list1 = $Collection->where("uid = $uid")->limit(3)->select();
 		
@@ -26,7 +28,7 @@ class MainPageAction extends Action
 		$this->assign('list1',$list1);
 
 		$Books = D('books');
-		$list2 = $Books->order('count desc')->limit(3)->select();
+		$list2 = $Books->order('count desc')->limit(5)->select();
 		for($i=0; $i<count($list2); $i++)
 		{
 			$tmp = $list2[$i]['bookid'];
@@ -59,7 +61,7 @@ class MainPageAction extends Action
 		$count = $Books->where("classify = '$classify'")->count();
 		if($count == 0)
 			$search_info = "尚无此类图书！";
-		$Page = new Page($count,1);
+		$Page = new Page($count,9);
 		$show = $Page->show();
 		$list = $Books->where("classify = '$classify'")->order('count desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		for($j=0; $j<count($list); $j++)

@@ -6,10 +6,10 @@
     <meta name="Author" content="Soleil-kk">
     <meta name="Keywords" content="book.fun">
     <meta name="Description" content="兴趣书籍论坛">
-    <link rel="stylesheet" type="text/css" href="/bookfun/Public/main_page/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/bookfun/Public/main_page/css/flat-ui.min.css">
-    <script src="/bookfun/Public/main_page/js/jquery-1.11.1.min.js"></script> 
-    <script src="/bookfun/Public/main_page/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/v/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/v/css/flat-ui.min.css">
+    <script src="__PUBLIC__/v/js/jquery-1.11.1.min.js"></script> 
+    <script src="__PUBLIC__/v/js/bootstrap.min.js"></script>
  
     <style type="text/css">
 
@@ -104,7 +104,7 @@
         <li class="active" style="font-weight:bold;padding:30px 0 10px 0;"> 书籍分类 </li>
         <li > <a href="{:U('MainPage/classify?choice=小说')}">小说</a></li>
         <li > <a href="{:U('MainPage/classify?choice=文学')}">文学</a> </li>
-        <li> <a href="{:U('MainPage/classify?choice=感情')}">情感</a> </li>
+        <li> <a href="{:U('MainPage/classify?choice=情感')}">情感</a> </li>
         <li> <a href="{:U('MainPage/classify?choice=科技')}">科技</a> </li>
         <li> <a href="{:U('MainPage/classify?choice=经管')}">经管</a> </li>
         <li> <a href="{:U('MainPage/classify?choice=儿童')}">儿童</a> </li>
@@ -118,7 +118,7 @@
 
   
     <div style="margin-left:200px;">
-       <img src="/bookfun/Public/img/top.gif">
+       <img src="__PUBLIC__/v/img/top.gif">
       
     </div>
 
@@ -133,17 +133,17 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="/bookfun/Public/img/main1.jpg" alt="...">
+      <img src="__PUBLIC__/v/img/main1.jpg" alt="...">
      
     </div>
     <div class="item">
-      <img src="/bookfun/Public/img/main2.jpg" alt="...">
+      <img src="__PUBLIC__/v/img/main2.jpg" alt="...">
       <div class="carousel-caption">
         
       </div>
     </div>
     <div class="item">
-      <img src="/bookfun/Public/img/main3.jpg" alt="...">
+      <img src="__PUBLIC__/v/img/main3.jpg" alt="...">
       
     </div>
     
@@ -163,10 +163,10 @@
 
   </div>
 
-   <div class="page-header" style="margin:100px 0px 10px 1100px;">
+   <div class="page-header" style="margin:70px 0px 10px 1100px;height:160px">
         <h6><span class="glyphicon glyphicon-signal"></span>
           <a href="{:U('PersonalCenter/my_collection')}">我的收藏</a>          <!--我的全部收藏链接-->
-           <small>My collection</small> 
+           <small style="color:blue">&nbspMy collection</small> 
         </h6>
         {$info1}
         <ol>
@@ -175,10 +175,10 @@
            </volist>
         </ol>
  </div>
-   <div class="page-header" style="margin:100px 0px 10px 1100px;">
+   <div class="page-header" style="margin:15px 0px 10px 1100px;height:220px">
         <h6><span class="glyphicon glyphicon-signal"></span>
           <a href="{:U('BookCenter/hot_book')}">最热图书</a>          <!--我的全部收藏链接-->
-           <small>top3</small> 
+           <small style="color:red">&nbsp&nbsp top5</small> 
         </h6>
         {$info2}
         <ol>
@@ -188,23 +188,22 @@
         </ol>
  </div>
  
- <div class="page-header" style="margin:0px 0px 10px 200px;">
+ <div class="page-header" style="margin:20px 0px 10px 200px;">
         <h5><span class="glyphicon glyphicon-heart-empty"></span>
           新书抢先看
-          <small>Daily regular push popular books on the same day</small>  
+          <small style="color:green">Daily regular push popular books on the same day</small>  
         </h5>
         
  </div>
-{$info2}
 <div class="row" style="margin-left:190px;">
+  {$info2}
   <volist name='list3' id='vo'>
   <div class="col-md-2">
     <a href= "{$vo.myURL}">
-     <img class="img-circle" src="/bookfun/Public/Uploads/{$vo.image}" >
+     <img class="img-circle" src="__PUBLIC__/Uploads/{$vo.image}" >
    </a>
-     <h6>{$vo.bookname}</h6>
-     <p>{$vo.author}
-     </p>
+     <h6 style="text-align:center">{$vo.bookname}</h6>
+     <p style="text-align:center">{$vo.author}</p>
   </div>
   </volist>
 </div> <!--推荐书目结尾-->

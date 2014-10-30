@@ -51,7 +51,11 @@ class BookCenterAction extends Action
 		header("Content-Type:text/html; charset=utf-8");
 		$Books = M('books');
 		$book_name = $this->_param('txt_book');
-		$name_list =explode(" ",$book_name);
+		$p = $this->_param('p');
+		if($p)
+			$name_list = explode("+",$book_name);
+		else
+			$name_list = explode(" ",$book_name);
 		$condition = array();
 		$num = 0;
 		for($i=0; $i<count($name_list); $i++)
@@ -72,7 +76,10 @@ class BookCenterAction extends Action
 			$map['bookname'] = array('like',$condition,'OR');
 			import('ORG.Util.Page');
 			$count = $Books->where($map)->count();
-			$Page = new Page($count,3);
+			$search_info = "";
+			if(!$count)
+				$search_info = "未找到该图书";
+			$Page = new Page($count,9);
 			$show = $Page->show();
 			$list = $Books->where($map)->limit($Page->firstRow.','.$Page->listRows)->select();
 			for($j=0; $j<count($list); $j++)
@@ -94,6 +101,7 @@ class BookCenterAction extends Action
 				}
 				$list[$j]['dir'] = U('BookCenter/bs_show',$tmp);
 			}
+			$this->assign('search_info',$search_info);
 			$this->assign('list',$list);
 			$this->assign('page',$show);
 			$this->display();
@@ -106,7 +114,17 @@ class BookCenterAction extends Action
 		$data['bookid'] = $this->_param('bookid');
 		$data['uid'] = session('uid');
 		if($Collection->data($data)->add())
+		{
+			$bookid = $data['bookid'];
+			$Books = D('books');
+			$count = $Books->where("bookid = $bookid")->getField('count');
+			$count += 5;
+			$data1['bookid'] = $bookid;
+			$data1['count'] = $count;
+			if(!$Books->save($data1))
+				$this->error('系统错误，收藏失败！');
 			$this->success('收藏成功！');
+		}
 		else
 			$this->error('系统错误，取消收藏！');
 	}
@@ -117,7 +135,16 @@ class BookCenterAction extends Action
 		$bookid = $this->_param('bookid');
 		$uid = session('uid');
 		if($Collection->where("uid = $uid and bookid = $bookid")->delete())
+		{
+			$Books = D('books');
+			$count = $Books->where("bookid = $bookid")->getField('count');
+			$count -= 5;
+			$data1['bookid'] = $bookid;
+			$data1['count'] = $count;
+			if(!$Books->save($data1))
+				$this->error('系统错误，取消收藏失败！');
 			$this->success('取消收藏成功！');
+		}
 		else
 			$this->error('系统错误，取消收藏失败！');
 	}
@@ -151,7 +178,7 @@ class BookCenterAction extends Action
 		$Comment = D('comment');
 		import('ORG.Util.Page');
 		$count = $Comment->where("bookid = $bookid")->order('commentid desc')->count();
-		$Page = new Page($count,4);
+		$Page = new Page($count,5);
 		$show = $Page->show();
 		$list2 = $Comment->where("bookid = $bookid")->order('commentid desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$cnt = count($list2);
@@ -196,14 +223,13 @@ class BookCenterAction extends Action
 		$hot_info = "";
 		if($count == 0)
 			$hot_info = "还未有图书上传！";
-		$Page = new Page($count,3);
+		$Page = new Page($count,9);
 		$show = $Page->show();
 		$list = $Books->order('count desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		for($j=0; $j<count($list); $j++)
 		{
 			$bookid = $list[$j]['bookid'];
 			$uid = session('uid');
-			$uid = 3;
 			$tmp['bookid'] = $bookid;
 			$Collection = D('collection');
 			$flag = $Collection->check_collect($uid,$bookid);

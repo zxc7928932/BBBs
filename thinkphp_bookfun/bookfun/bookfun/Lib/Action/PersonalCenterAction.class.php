@@ -6,9 +6,8 @@ class PersonalCenterAction extends Action
 	{
 		header("Content-Type:text/html; charset=utf-8");
 		$User = D('user');
-		$username = $_SESSION['username'];
-		$username = 'liyanli';
-		$list = $User->where("username = '$username'")->find();
+		$uid = session('uid');
+		$list = $User->where("uid = $uid")->find();
 		$this->assign('list',$list);
 		$this->display();
 	}
@@ -16,9 +15,9 @@ class PersonalCenterAction extends Action
 	public function alter_data()
 	{
 		header("Content-Type:text/html; charset=utf-8");
-		$username = $_SESSION['username'];
+		$uid = session('uid');
 		$User = D('user');
-		$result = $User->where("username = '$username'")->find();
+		$result = $User->where("uid = $uid")->find();
 		if(!$result)
 		{
 			$this->error('系统错误，修改失败！');
@@ -29,17 +28,16 @@ class PersonalCenterAction extends Action
 			$data['sex'] = I('sex','','htmlspecialchars');
 			$data['age'] = I('age','','htmlspecialchars');
 			$data['signature'] = I('signature','','htmlspecialchars');
-
 			import('ORG.Net.UploadFile');
 			$upload = new UploadFile();
 			$upload->maxSize = 3145788;
 			$upload->allowExts = array('jpg','gif','png','jpeg');
-			$upload->savePath = './Public/Uploads/';
+			$upload->savePath = "./Public/Uploads/";
 			$upload->uploadReplace = true;
        		$upload->thumb = true;
-        	$upload->thumbMaxWidth = 100;
+        	$upload->thumbMaxWidth = 50;
        		$upload->thumbMaxHeight = 50;
-        	$upload->thumbPath = './Public/Uploads/';
+        	$upload->thumbPath = "./Public/Uploads/";
         	$upload->thumbRemoveOrigin = true;
 			if(!$upload->upload())
 				$this->error($upload->getErrorMsg());
@@ -48,7 +46,7 @@ class PersonalCenterAction extends Action
 			$old = $result['photo'];
 			unlink("./Public/Uploads/".$old);
 			$data['photo'] = 'thumb_'.$info[0]['savename'];
-			$result = $User->where("username = '$username'")->save($data);
+			$result = $User->where("uid = $uid")->save($data);
 			if($result)
 				$this->success('修改个人信息成功！');
 			else
@@ -61,13 +59,12 @@ class PersonalCenterAction extends Action
 		header("Content-Type:text/html; charset=utf-8");
 		$Collection = D('collection');
 		$uid = session('uid');
-		$uid = 3;
 		import('ORG.Util.Page');
 		$search_info = "";
 		$count = $Collection->where("uid = $uid")->count();
 		if($count == 0)
 			$search_info = "尚未收藏图书！";
-		$Page = new Page($count,3);
+		$Page = new Page($count,9);
 		$show = $Page->show();
 		$list = $Collection->where("uid = $uid")->limit($Page->firstRow.','.$Page->listRows)->select();
 		$Books = D('books');

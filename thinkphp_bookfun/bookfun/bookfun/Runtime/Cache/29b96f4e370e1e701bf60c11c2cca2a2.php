@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><html><head><title>首页-book.fun</title><meta charset="UTF-8"><meta name="Author" content="Soleil-kk"><meta name="Keywords" content="book.fun"><meta name="Description" content="兴趣书籍论坛"><link rel="stylesheet" type="text/css" href="/bookfun/Public/PersonalCenter/css/bootstrap.min.css"><style type="text/css">    body,ul,p,h1,h2,form,select,input{
+<?php if (!defined('THINK_PATH')) exit();?><html><head><title>首页-book.fun</title><meta charset="UTF-8"><meta name="Author" content="Soleil-kk"><meta name="Keywords" content="book.fun"><meta name="Description" content="兴趣书籍论坛"><link rel="stylesheet" type="text/css" href="__PUBLIC__/v/css/bootstrap.min.css"><style type="text/css">    body,ul,p,h1,h2,form,select,input{
         margin:0;
         padding:0;
     }
