@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'commentid', 1 => 'uid', 2 => 'bookid', 3 => 'content', '_autoinc' => true, '_pk' => 'commentid', '_type' => array ( 'commentid' => 'bigint(20)', 'uid' => 'bigint(20)', 'bookid' => 'bigint(20)', 'content' => 'varchar(400)', ), );?>

@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'uid', 1 => 'username', 2 => 'pwd', 3 => 'sex', 4 => 'age', 5 => 'signature', 6 => 'photo', '_autoinc' => true, '_pk' => 'uid', '_type' => array ( 'uid' => 'bigint(20)', 'username' => 'varchar(30)', 'pwd' => 'varchar(40)', 'sex' => 'varchar(7)', 'age' => 'int(11)', 'signature' => 'varchar(200)', 'photo' => 'varchar(30)', ), );?>
