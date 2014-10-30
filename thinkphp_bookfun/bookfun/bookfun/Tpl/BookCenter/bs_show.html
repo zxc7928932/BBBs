@@ -3,70 +3,68 @@
 <head>
     <title>Book title</title>
     <meta charset="utf-8">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/master.css" rel="stylesheet">
+    <link href="/bookfun/Public/main_page/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bookfun/Public/main_page/css/master.css" rel="stylesheet">
     <!-- bootstrap wysihtml5 - text editor -->
-    <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+    <link href="/bookfun/Public/main_page/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
     <style type="text/css"></style>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background:  #0F0F0F;"
-></button>
-            <a class="navbar-brand" href="home.html" style="font-size:25px;font-weight:bold;color:#AAAAAA;">
-                <span class="glyphicon glyphicon-home"></span>
-                Book.fun
-            </a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li  >
-                    <a href="home.html"></span>
-                    首页
-                </a>
-            </li>
-            <li class="active">
-                <a href="#">书籍</a>
-            </li>
-        </ul>
-        <form class="navbar-form navbar-right" role="search" action="get">
-            <div class="form-group form-group-search" id="nav-search">
-                <input type="text" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
-            </div>
-            <button type="submit" class="btn btn-default" style="float:right;margin-right:20px;">
-                <span class="glyphicon glyphicon-search"></span>
-                搜索
-            </button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-            <li style="margin-left:50px;">
-                <a href="个人中心v1.01.html">
-                    <span class="glyphicon glyphicon-user">个人中心</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-<?php 
-    session_start();
-    $link=mysql_connect("localhost","root","676792")or die("数据库服务器连接错误".mysql_error());//链接数据库
-    mysql_select_db("test",$link) or die("数据库访问错误".mysql_error());    //选择数据库
-    mysql_query("set names utf-8");                                            //选择字符集标准格式
-    $sql=mysql_query("select * from books where id =$id");                      //检索书籍
-    $row=mysql_fetch_object($sql);
-    $uid=$_SESSION['number'];
-    $uid=4;
 
-    $result=mysql_query("select * from collection where user=$uid and book=$id");
-    $num = mysql_num_rows($result);
-    $_SESSION['boo_id']=$id;
-    
-?>
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+         
+          </button>
+            <a class="navbar-brand" href="{:U('MainPage/main_page')}" style="font-size:25px;font-weight:bold;color:#AAAAAA;">
+            Book.fun
+              
+            </a> 
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background:  #0F0F0F;">
+
+           <ul class="nav navbar-nav">
+              <li > 
+              <a href="{:U('MainPage/main_page')}">
+                <span class="glyphicon glyphicon-home"></span>
+                 首页
+              </a>
+               </li>
+              <li> <a href="{:U('BookCenter/upload_show')}">
+                    <span class="glyphicon glyphicon-cloud-upload"></span>
+                     上传书籍
+                   </a> 
+              </li>
+           </ul>
+
+           <form class="navbar-form navbar-right" role="search" action="{:U('BookCenter/search_book')}" method="get">
+
+              <div class="form-group" id="nav-search">
+                 <input type="text" name="txt_book" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
+           </form>
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <li style="margin-left:50px;">
+              <a href="{:U('PersonalCenter/center_show')}">
+                <span class="glyphicon glyphicon-user">
+                  个人中心
+              </a> 
+            </li>
+
+           </ul>
+      </div>
+   </nav>
+
     <div class="container center-container">
 
         <div class="row clearfix">
             <div class="col-md-12 column heading">
-                <h1><?php echo $row->bookname ?></h1>
+                <h1>{$list1.bookname}</h1>
             </div>
         </div>
         <!-- row -->
@@ -74,21 +72,20 @@
         <div class="row clearfix">
             <div class="col-md-4 column">
                 <div id="mainpic" class="">
-                    <a class="nbg" href="http://img3.douban.com/lpic/s27457804.jpg" title="<?php echo $row->bookname ?>">
-                        <img src="<?php echo $row->image ?>" title="点击看大图" alt="<?php echo $row->bookname ?>" rel="v:photo"></a>
+                    <a class="nbg" href="/bookfun/Public/Uploads/{$list1.image}" title="<?php echo $row->bookname ?>">
+                        <img src="/bookfun/Public/Uploads/{$list1.image}" title="点击看大图" alt="/bookfun/Public/Uploads/{$list1.image}" rel="v:photo"></a>
                 </div>
             </div>
 
             <div class="col-md-6 column">
                 <div id="info" class="">
                     <span>
-                        <span class="pl">作者</span>
-                        :
-                        <a class="" href="/search/%E6%9D%89%E6%B5%A6%E5%BA%B7%E5%B9%B3%20%E7%BC%96%E8%91%97"><?php echo $row->author."编著" ?> </a>
+                        <span class="pl" style="color:blue">作者：</span>
+                        {$list1.author}
                     </span>
                     <br>
-                    <span class="pl">出版社:</span>
-            <?php echo $row->press."出版" ?>
+                    <span class="pl">出版社：</span>
+                        {$list1.press}
                     <br>
                   
                     <br>
@@ -97,12 +94,7 @@
 
 
             <div class="col-md-2 column">
-            <?php if($num==0){ ?>
-             <a href=collection.php?id=".<?php $row->id?>." class="btn btn-default btn-success" contenteditable="true"> 收藏 </a>
-             <?php }
-             else{ ?>
-             <a href=delete_collection.php?id=".<?php $row->id?>." class="btn btn-default btn-danger" contenteditable="true"> 取消收藏</a>
-             <?php }?>
+             <a href="{$list1.myURL}" class="btn btn-default btn-success" >{$list1.info}</a>
             </div>
         </div>
         <!-- row -->
@@ -117,12 +109,12 @@
                         &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
                     </h2>
                     <div class="intro">
-                        <p><?php echo $row->bookname ?></p>
-                        <p>分类:<?php echo $row->classify?></p>
+                        <p>{$list1.bookname}</p>
+                        <p>分类:{$list1.classify}</p>
                         <p>让我们走进这本书籍的世界</p>
                         <p>◎内容简介</p>
                         <p>
-                           <?php echo $row->content?>
+                           {$list1.content}
                         </p>
             
                     </div>
@@ -133,12 +125,6 @@
                             <h2>书评&nbsp;&nbsp;· · · · · ·&nbsp;</h2>
 
                             <ul class="nav nav-pills comment-right">
-                                <li class="active">
-                                    <a href="#">
-                                        <span class="badge pull-right"></span>
-                                        全部评论
-                                    </a>
-                                </li>
                                 <li>
                                     <a href="#comment-editor">
                                         <span class="badge pull-right"></span>
@@ -149,64 +135,30 @@
                         </div>
 
                         <div class="comment-box">
+                            {$comment_info}
                             <div id="js-comment-box"> 
-<?php 
-    $sql1=mysql_query("select * from comment where book_id= $id order by comment_id desc ");                        //检索评论
-    $row1=mysql_fetch_object($sql1);
-    $num=mysql_num_rows($sql1);
-    if($num<3){
-    for($i=0;$i<$num;$i++){
-    $sql2=mysql_query("select * from register where uid='$row1->user'");
-    $row2=mysql_fetch_object($sql2);
-?>
+                            <volist name='list2' id='vo'>
                             <div class="comment">
                                 <div class="comment-title">
                                     <div class="image">
-                                      
-                                            <img src=<?php echo $row2->Photo;?> alt="user image"><?php echo $row2->nickname?></a>
+<?php
+
+    $User = D('user');
+    $tmp_uid = $vo['uid'];
+    $user = $User->where("uid = $tmp_uid")->find();
+?>
+                                            <img src="/bookfun/Public/Uploads/{$user.photo}" alt="user image">{$user.username}</a>
                                     </div>
                                 </div>
                                 <div class="comment-message">
                                     <p>
-                                        <?php echo $row1->content?>
+                                        {$vo.content}
                                     </p>
                                 </div>
                             </div>
-                            
-
-<?php 
-    $row1=mysql_fetch_object($sql1);
-    }
-}
-else
- for($i=0;$i<3;$i++){
-    $sql2=mysql_query("select * from register where uid='$row1->user'");
-    $row2=mysql_fetch_object($sql2);
-?>
-                            <div class="comment">
-                                <div class="comment-title">
-                                    <div class="image">
-                                      
-                                            <img src=<?php echo $row2->Photo;?> alt="user image"><?php echo $row2->nickname?></a>
-                                    </div>
-                                </div>
-                                <div class="comment-message">
-                                    <p>
-                                        <?php echo $row1->content?>
-                                    </p>
-                                </div>
-                            </div>
-                            
-
-<?php 
-    $row1=mysql_fetch_object($sql1);
-    }
-?>
+                            </volist>
                     </div>
-                    <div class="comment-footer">
-                        <a class="js-more-discussion" href="javascript:;">显示更早的讨论</a>
-                    </div>
-
+                    <div class="result page">{$page}</div>
                         </div>
                         <!-- box --> </div>
                     <!-- reviews --> </div>
@@ -227,7 +179,7 @@ else
                             <!-- tools box --> </div>
                         <!-- /.box-header -->
                         <div class='box-body pad' >
-                            <form name="form1"action="../action/setcomment.php" method="post" >
+                            <form name="form1"action="{$list1.commentURL}" method="get" >
                                 <textarea name="comment" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                 <div class="footer" style="margin-top:10px;">
                                     <button type="submit" class="btn btn-success" onClick="return check1(form1);">提交</button>
