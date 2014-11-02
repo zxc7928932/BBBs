@@ -1,3 +1,7 @@
+<?php if($_SESSION['member']==""){
+  echo "<script>alert('请先登录！');history.back();window.location.href=main.php;</script>";
+}
+?>
 <html>
 <head>
 <title>信息管理</title>
@@ -84,7 +88,7 @@ form.submit();
             ?>
                       <tr bgcolor="#FFFFFF">
                         <td><?php echo $row->bookname;?></td>
-                        <td><?php echo chinesesubstr($row->content, 0, 30);//输出内容
+                        <td><?php echo mb_substr($row->content,0,20,"UTF-8");//输出内容
                         if(strlen($row->content)>30)//超过30字符截取
                         echo "...";
                         

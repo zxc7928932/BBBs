@@ -1,3 +1,7 @@
+<?php if($_SESSION['member']==""){
+  echo "<script>alert('请先登录！');history.back();window.location.href=main.php;</script>";
+}
+?>
 <html>
 <head>
 <title>信息管理</title>
@@ -53,8 +57,10 @@ form.submit();
                       <tr align="center" bgcolor="#f0f0f0">
                         <td width="221">用户名</td>
                         <td width="329">用户签名</td>
+                        <td width="47">详情</td>
                       </tr>
 					 <?php
+
           $conn=mysql_connect("localhost","root","zxc7928932") or die("数据库服务器连接错误".mysql_error());
           mysql_select_db("guestinfo",$conn) or die("数据库访问错误".mysql_error());
           mysql_query("set names utf-8");
@@ -83,7 +89,7 @@ form.submit();
                       <tr bgcolor="#FFFFFF">
                         <td><?php echo $row->Username ;?></td>
                         <td><?php echo $row->singing ;?></td>
-                          
+                       <td align="center"><a href="check_info.php?id=<?php echo $row->uid;?>"><img src="images/update.gif" width="22" height="22" border="0"></a></td>     
                       </tr>
 					<?php
 						}while($row=mysql_fetch_object($sql));

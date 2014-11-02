@@ -1,4 +1,8 @@
-﻿<html>
+﻿<?php if($_SESSION['member']==""){
+	echo "<script>alert('请先登录！');history.back();window.location.href=main.php;</script>";
+}
+?>
+<html>
 <head>
 <title>后台管理</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -8,6 +12,7 @@
 <table width="828" height="522" border="0" align="center" cellpadding="0" cellspacing="0" id="__01">
 	<tr>
 		<td background="images/image_01.gif">&nbsp;			</td>
+
 		<td height="140" background="images/image_02.gif">&nbsp;			</td>
 	</tr>
 	<tr>
@@ -19,9 +24,12 @@
 		<td height="34" background="images/image_04.gif" style="background-repeat :no-repeat;">&nbsp;			</td>
 	</tr>
 	<tr>
+
 		<td height="38" background="images/image_06.gif">&nbsp;			</td>
 	</tr>
-	<tr>
+	
+		
+		<tr>
 		<td height="70" valign="top">
 		  <table width="626" border="0" cellpadding="0" cellspacing="0" >
 			
@@ -31,7 +39,7 @@
        	<form action="change.php" method="post" enctype="multipart/form-data">
                  <tr>
           <tr>
-		    <td style="text-align:center;"><h3 style="color:red;">首页轮播器图片修改(仅支持jpg格式)</h3></td>
+		    <td style="text-align:center;"><h3 style="color:red;">首页轮播器图片修改</h3></td>
 		   </tr>
 		  <tr>
 		    <td><p style="margin-left:150px;">图片1：</p><input type="file"  name="filename1" style="margin:10px 0px 10px 150px;"> 

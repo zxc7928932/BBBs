@@ -1,5 +1,9 @@
 <?php 
+	
 	header("Content-Type:text/html;charset=utf-8");
+	if($_SESSION['member']==""){
+	echo "<script>alert('请先登录！');history.back();window.location.href=main.php;</script>";
+}
 	$filename1 = $_POST['filename1'];
 	$filename2 = $_POST['filename2'];
 	$filename3 = $_POST['filename3'];

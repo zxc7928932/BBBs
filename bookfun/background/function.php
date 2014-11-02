@@ -6,7 +6,7 @@ header("Content-Type:text/html; charset=utf-8");
     for($i=0;$i<$strlen;$i++) { 
         if(ord(substr($str,$i,1))>0xa0) { 
             $tmpstr.=substr($str,$i,2); 
-            $i++; 
+            $i+=1; 
          } 
 		else 
             $tmpstr.=substr($str,$i,1); 
