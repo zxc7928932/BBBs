@@ -1,0 +1,127 @@
+<html>
+<head>
+  <title>测端导航试验</title>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <style type="text/css">
+         body,div,div,ul,li,h1,h2,h3{
+          padding: 0;margin:0 
+         }
+         ul,li{list-style: none;}
+         .sidebar{
+          border: 1px solid red;
+          width: 200px;
+          padding: 10px;margin: 100px 20px 20px 100px;float: left;
+         }
+         .sidebar h2{
+          text-align: center;
+          padding: 5px 5px 10px;
+         }
+         #menu{
+           width: 180px;
+           height: 100px;
+           background:#FFFF00;
+           position: relative;
+           padding: 0px;
+           
+         }
+         #menu li{
+          float: left;
+          width: 180px;
+          display: block;
+          position: relative;
+          border: none;
+         }
+         #menu li a:hover{
+          background: black;
+
+         }
+         #menu li a{
+          display: block;
+          padding: 10px;
+
+         }
+         #menu li:hover a{
+          color: #fff;
+         }
+         .dropdown{
+          float: left;
+          position: absolute;
+          left:-999em;
+          text-align: left;
+
+
+         }
+         #menu li:hover .dropdown{
+          left: 200px;
+         }
+         .col{
+          width: 120px;
+          display: inline;
+          float: left;
+          position: relative;
+          margin: 0;
+
+         }
+         #menu li ul li {font-size:12px;line-height:21px;position:relative;
+          padding:0 0 0 6px;margin:0;text-align:left;width:120px;
+           border-left:#ccc 1px solid;
+         }
+
+    </style>
+</head>
+<body>
+  
+  <div class="sidebar">
+  <h2>书籍类别</h2>
+  <ul id="menu">
+
+     <li><a href="#">文学</a>
+
+         <div class="dropdown"> 
+             <div class="col">
+                  <h3>文学分类</h3>
+                  <ul>
+                      <li><a href="#">世界名著</a></li>
+                      <li><a href="#">世界名著</a></li>
+                      <li><a href="#">世界名著</a></li>
+                      <li><a href="#">世界名著</a></li>
+                      <li><a href="#">世界名著</a></li>
+                      <li><a href="#">世界名著</a></li>
+                  </ul>
+             </div>
+         </div>
+
+     </li>
+
+          <li><a href="#">法学</a>
+
+         <div class="dropdown"> 
+             <div class="col">
+                  <h3>文学分类</h3>
+                  <ul>
+                      <li><a href="#">世界名著</a></li>
+                      <li><a href="#">世界名著</a></li>
+                      <li><a href="#">世界名著</a></li>
+                      <li><a href="#">世界名著</a></li>
+                      <li><a href="#">世界名著</a></li>
+                      <li><a href="#">世界名著</a></li>
+                  </ul>
+             </div>
+         </div>
+
+     </li>
+
+
+  </ul>
+
+
+
+
+  </div>
+
+</body>
+</html>

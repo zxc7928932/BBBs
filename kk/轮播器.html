@@ -1,0 +1,46 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>轮播器</title>
+<style type="text/css">
+#div1{
+	width: 100px;
+	height:100px;
+	position: absolute;
+	background: red;
+	left:100px;
+}
+#btn1，#btn2{
+	width:100px;
+}
+
+
+</style>
+</head>
+<body>
+<script type="text/javascript">
+
+	window.onload=function(){
+	var oDiv=document.getElementById('div1');
+	var oBtn1=document.getElementById('btn1');
+	var oBtn2=document.getElementById('btn2');
+	var timer=null;
+	oBtn1.onclick=function()
+	{
+       timer=setInterval(function(){
+       	oDiv.style.left=oDiv.offsetLeft+5+'px';
+       },30);
+	};
+	oBtn2.onclick=function()
+	{
+		clearInterval(timer);
+	};
+};
+</script>
+
+<button id="btn1">向右移动</button>
+<button id="btn2">停止移动</button>
+<div id="div1"></div>
+
+</body>
+</html>
