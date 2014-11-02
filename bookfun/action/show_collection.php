@@ -117,7 +117,7 @@
 	session_start();
 	$link=mysql_connect("localhost","root","zxc7928932")or die("数据库服务器连接错误".mysql_error());//链接数据库
     mysql_select_db("guestinfo",$link) or die("数据库访问错误".mysql_error());    //选择数据库
-    mysql_query("set names gb2312");                                            //选择字符集标准格式
+    mysql_query("set names utf-8");                                            //选择字符集标准格式
 	$u_id=$_SESSION['number'];
 	
 	if($page==""){         //如果页数还未赋值，给其初始值1
@@ -136,7 +136,7 @@
   	else{         
   		do{
   			$book_id=$row->book;
-  			$sql1=mysql_query("sqlect * from books where id =$book_id");
+  			$sql1=mysql_query("select * from books where id =$book_id");
   			$row1=mysql_fetch_object($sql1);
   			?>  
   			<div class="col-sm-6 col-md-4" id="book_form"  style="margin-left:80px">

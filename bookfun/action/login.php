@@ -27,7 +27,7 @@
 	}
 	else {										//密码正确，转至主页
 		$_SESSION['number']=$info->uid;	//用户编号存入session		
-		echo "<script> alert('登录成功，点击跳转主页!');window.location.href='../view/home.php';</script>";
+		echo "<script> window.location.href='../view/home.php';</script>";
 	}
 }
 	

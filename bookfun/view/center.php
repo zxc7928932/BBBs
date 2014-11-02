@@ -6,7 +6,7 @@
     <meta name="Keywords" content="book.fun">
     <meta name="Description" content="兴趣书籍论坛">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    
+    <link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
     <script src="js/jquery-1.11.1.min.js"></script> 
     <script src="js/bootstrap.min.js"></script>
     <script language="javascript"  src="bootstrap.js"></script>
@@ -77,7 +77,7 @@
                  <input type="text" name="txt_book" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
+              <button type="submit" name="submit" value="submit" class="btn btn-primary" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
            </form>
 
           <ul class="nav navbar-nav navbar-right">
@@ -98,7 +98,6 @@
 <?php
   session_start();
   $curuser = $_SESSION['number'];
-  $curuser = 9;
   $link1 = mysql_connect("localhost","root","zxc7928932")or die("数据库服务器连接错误".mysql_error());
   mysql_select_db("guestinfo",$link1) or die("数据库访问错误".mysql_error());    
   mysql_query("set names utf-8");  

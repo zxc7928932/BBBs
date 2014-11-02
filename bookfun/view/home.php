@@ -78,15 +78,22 @@
                  <input type="text" name="txt_book" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
+              <button type="submit" name="submit" value="submit"class="btn btn-primary" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
            </form>
 
           <ul class="nav navbar-nav navbar-right">
 
-            <li style="margin-left:50px;">
+           <li >
               <a href="center.php">
                 <span class="glyphicon glyphicon-user">
                   个人中心
+              </a> 
+            </li>
+
+             <li >
+              <a href="../action/logout.php">
+                <span class="glyphicon glyphicon-off">
+                退出账户
               </a> 
             </li>
 
@@ -103,15 +110,15 @@
             
       <ul class="nav  bs-sidenav">
         <li class="active" style="font-weight:bold;padding:30px 0 10px 0;"> 书籍分类 </li>
-        <li > <a href="../action/classify.php"?choice="小说">小说</a></li>
-        <li > <a href="../actionclassify.php"?choice="文学">文学</a> </li>
-        <li> <a href="../action/classify.php"?choice="情感">情感</a> </li>
-        <li> <a href="../action/classify.php"?choice="科技">科技</a> </li>
-        <li> <a href="../action/classify.php"?choice="经管">经管</a> </li>
-        <li> <a href="../action/classify.php"?choice="儿童">儿童</a> </li>
-        <li> <a href="../action/classify.php"?choice="教育">教育</a> </li>
-        <li> <a href="../action/classify.php"?choice="生活">生活</a> </li>
-        <li> <a href="../action/classify.php"?choice="体育">体育</a> </li>
+        <li > <a href="../action/classify.php?choice=小说">小说</a></li>
+        <li > <a href="../action/classify.php?choice=文学">文学</a> </li>
+        <li> <a href="../action/classify.php?choice=情感">情感</a> </li>
+        <li> <a href="../action/classify.php?choice=科技">科技</a> </li>
+        <li> <a href="../action/classify.php?choice=经管">经管</a> </li>
+        <li> <a href="../action/classify.php?choice=儿童">儿童</a> </li>
+        <li> <a href="../action/classify.php?choice=教育">教育</a> </li>
+        <li> <a href="../action/classify.php?choice=生活">生活</a> </li>
+        <li> <a href="../action/classify.php?choice=体育">体育</a> </li>
         <!-- class="disabled"-->
         </li>
       </ul>
@@ -189,7 +196,7 @@
       $row1=mysql_fetch_object($sql1);
       $title=$row1->bookname;
 ?>
-           <li><a href="show.php?id=$bookid"><?php echo $title ;?></a></li>
+           <li><a href="show.php?id=<?php echo $row1->id;?>"><?php echo $title ;?></a></li>
            
       <?php }while($row=mysql_fetch_object($sql));
     }?>
@@ -198,13 +205,13 @@
 
  <div class="page-header" style="margin:100px 0px 10px 1100px;">
         <h6><span class="glyphicon glyphicon-signal"></span>
-          <a href="../action/show_collection.php">最热图书</a>          <!--我的全部收藏链接-->
+          <a href="../action/hotbook.php">最热图书</a>          <!--我的全部收藏链接-->
            <small>top3</small> 
         </h6>
         <ol>
 <?php 
 
-    $sql=mysql_query("select * from books order by count desc limit 0,3 ");
+    $sql=mysql_query("select * from books order by count desc limit 0,5");
     $num=mysql_num_rows($sql);
     $row=mysql_fetch_object($sql);
     if($num==0){
@@ -217,7 +224,7 @@
       $row1=mysql_fetch_object($sql1);
       $title=$row1->bookname;
 ?>
-           <li><a href="show.php?id=$bookid"><?php echo $title ;?></a></li>
+           <li><a href="show.php?id=<?php echo $row1->id;?>"><?php echo $title ;?></a></li>
            
       <?php }while($row=mysql_fetch_object($sql));
     }?>

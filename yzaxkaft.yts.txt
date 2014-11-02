@@ -1,0 +1,340 @@
+﻿Merge branch 'master' of https://github.com/Syslab-B/BBBs
+
+Conflicts:
+	thinkphp_bookfun/bookfun/Public/a/css/_notes/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+	thinkphp_bookfun/bookfun/Public/a/css/_notes/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+	thinkphp_bookfun/bookfun/Public/a/css/_notes/js/bootstrap.min.js
+	thinkphp_bookfun/bookfun/Public/a/css/_notes/js/jquery.min.js
+	thinkphp_bookfun/bookfun/Public/a/css/bootstrap-glyphicons.css
+	thinkphp_bookfun/bookfun/Public/a/css/bootstrap-theme.min.css
+	thinkphp_bookfun/bookfun/Public/a/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.css
+	thinkphp_bookfun/bookfun/Public/a/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css
+	thinkphp_bookfun/bookfun/Public/a/css/bootstrap.css
+	thinkphp_bookfun/bookfun/Public/a/css/bootstrap.min.css
+	thinkphp_bookfun/bookfun/Public/a/css/flat-ui.min.css
+	thinkphp_bookfun/bookfun/Public/a/css/fonts/glyphicons-halflings-regular.eot
+	thinkphp_bookfun/bookfun/Public/a/css/fonts/glyphicons-halflings-regular.svg
+	thinkphp_bookfun/bookfun/Public/a/css/fonts/glyphicons-halflings-regular.ttf
+	thinkphp_bookfun/bookfun/Public/a/css/fonts/glyphicons-halflings-regular.woff
+	thinkphp_bookfun/bookfun/Public/a/css/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+	thinkphp_bookfun/bookfun/Public/a/css/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+	thinkphp_bookfun/bookfun/Public/a/css/js/bootstrap.min.js
+	thinkphp_bookfun/bookfun/Public/a/css/js/jquery.min.js
+	thinkphp_bookfun/bookfun/Public/a/css/master.css
+	thinkphp_bookfun/bookfun/Public/a/css/style.css
+	thinkphp_bookfun/bookfun/Public/a/fonts/glyphicons-halflings-regular.eot
+	thinkphp_bookfun/bookfun/Public/a/fonts/glyphicons-halflings-regular.svg
+	thinkphp_bookfun/bookfun/Public/a/fonts/glyphicons-halflings-regular.ttf
+	thinkphp_bookfun/bookfun/Public/a/fonts/glyphicons-halflings-regular.woff
+	thinkphp_bookfun/bookfun/Public/a/images/QQ图片2014101105249.jpg
+	thinkphp_bookfun/bookfun/Public/a/images/bg.gif
+	thinkphp_bookfun/bookfun/Public/a/images/btn.gif
+	thinkphp_bookfun/bookfun/Public/a/images/com.jpg
+	thinkphp_bookfun/bookfun/Public/a/images/delete.gif
+	thinkphp_bookfun/bookfun/Public/a/images/image_01.gif
+	thinkphp_bookfun/bookfun/Public/a/images/image_02.gif
+	thinkphp_bookfun/bookfun/Public/a/images/image_03.gif
+	thinkphp_bookfun/bookfun/Public/a/images/image_04.gif
+	thinkphp_bookfun/bookfun/Public/a/images/image_05.gif
+	thinkphp_bookfun/bookfun/Public/a/images/image_06.gif
+	thinkphp_bookfun/bookfun/Public/a/images/image_07.gif
+	thinkphp_bookfun/bookfun/Public/a/images/image_08.gif
+	thinkphp_bookfun/bookfun/Public/a/images/image_09.jpg
+	thinkphp_bookfun/bookfun/Public/a/images/image_10.gif
+	thinkphp_bookfun/bookfun/Public/a/images/image_11.gif
+	thinkphp_bookfun/bookfun/Public/a/images/image_12.gif
+	thinkphp_bookfun/bookfun/Public/a/images/index_01.gif
+	thinkphp_bookfun/bookfun/Public/a/images/index_02.gif
+	thinkphp_bookfun/bookfun/Public/a/images/index_03.gif
+	thinkphp_bookfun/bookfun/Public/a/images/index_04.gif
+	thinkphp_bookfun/bookfun/Public/a/images/index_05.jpg
+	thinkphp_bookfun/bookfun/Public/a/images/index_06.gif
+	thinkphp_bookfun/bookfun/Public/a/images/index_07.gif
+	thinkphp_bookfun/bookfun/Public/a/images/index_08.gif
+	thinkphp_bookfun/bookfun/Public/a/images/index_09.gif
+	thinkphp_bookfun/bookfun/Public/a/images/update.gif
+	thinkphp_bookfun/bookfun/Public/a/images/xing.gif
+	thinkphp_bookfun/bookfun/Public/a/img/141391119970924.gif
+	thinkphp_bookfun/bookfun/Public/a/img/141391232975391.gif
+	thinkphp_bookfun/bookfun/Public/a/img/TB1ML5mGFXXXXbvXpXXvKyzTVXX-520-280.jpg
+	thinkphp_bookfun/bookfun/Public/a/img/TB1xmBCGFXXXXcDXFXXvKyzTVXX-520-280.jpg
+	thinkphp_bookfun/bookfun/Public/a/img/TB2HjX3aVXXXXbTXXXXXXXXXXXX_!!2250860980.jpg
+	thinkphp_bookfun/bookfun/Public/a/img/bg_x1.png
+	thinkphp_bookfun/bookfun/Public/a/img/s27356225.jpg
+	thinkphp_bookfun/bookfun/Public/a/img/s27401345.jpg
+	thinkphp_bookfun/bookfun/Public/a/img/s27401489.jpg
+	thinkphp_bookfun/bookfun/Public/a/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+	thinkphp_bookfun/bookfun/Public/a/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+	thinkphp_bookfun/bookfun/Public/a/js/bootstrap.min.js
+	thinkphp_bookfun/bookfun/Public/a/js/jquery-1.11.1.min.js
+	thinkphp_bookfun/bookfun/Public/a/js/jquery.min.js
+	thinkphp_bookfun/bookfun/Public/i/css/_notes/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+	thinkphp_bookfun/bookfun/Public/i/css/_notes/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+	thinkphp_bookfun/bookfun/Public/i/css/_notes/js/bootstrap.min.js
+	thinkphp_bookfun/bookfun/Public/i/css/_notes/js/jquery.min.js
+	thinkphp_bookfun/bookfun/Public/i/css/bootstrap-glyphicons.css
+	thinkphp_bookfun/bookfun/Public/i/css/bootstrap-theme.min.css
+	thinkphp_bookfun/bookfun/Public/i/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.css
+	thinkphp_bookfun/bookfun/Public/i/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css
+	thinkphp_bookfun/bookfun/Public/i/css/bootstrap.css
+	thinkphp_bookfun/bookfun/Public/i/css/bootstrap.min.css
+	thinkphp_bookfun/bookfun/Public/i/css/fonts/glyphicons-halflings-regular.eot
+	thinkphp_bookfun/bookfun/Public/i/css/fonts/glyphicons-halflings-regular.svg
+	thinkphp_bookfun/bookfun/Public/i/css/fonts/glyphicons-halflings-regular.ttf
+	thinkphp_bookfun/bookfun/Public/i/css/fonts/glyphicons-halflings-regular.woff
+	thinkphp_bookfun/bookfun/Public/i/css/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+	thinkphp_bookfun/bookfun/Public/i/css/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+	thinkphp_bookfun/bookfun/Public/i/css/js/bootstrap.min.js
+	thinkphp_bookfun/bookfun/Public/i/css/js/jquery.min.js
+	thinkphp_bookfun/bookfun/Public/i/css/master.css
+	thinkphp_bookfun/bookfun/Public/i/css/style.css
+	thinkphp_bookfun/bookfun/Public/i/fonts/glyphicons-halflings-regular.eot
+	thinkphp_bookfun/bookfun/Public/i/fonts/glyphicons-halflings-regular.svg
+	thinkphp_bookfun/bookfun/Public/i/fonts/glyphicons-halflings-regular.ttf
+	thinkphp_bookfun/bookfun/Public/i/fonts/glyphicons-halflings-regular.woff
+	thinkphp_bookfun/bookfun/Public/i/img/141391119970924.gif
+	thinkphp_bookfun/bookfun/Public/i/img/141391232975391.gif
+	thinkphp_bookfun/bookfun/Public/i/img/bg_x1.png
+	thinkphp_bookfun/bookfun/Public/i/img/s27356225.jpg
+	thinkphp_bookfun/bookfun/Public/i/img/s27401345.jpg
+	thinkphp_bookfun/bookfun/Public/i/img/s27401489.jpg
+	thinkphp_bookfun/bookfun/Public/i/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+	thinkphp_bookfun/bookfun/Public/i/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+	thinkphp_bookfun/bookfun/Public/i/js/bootstrap.min.js
+	thinkphp_bookfun/bookfun/Public/i/js/jquery-1.11.1.min.js
+	thinkphp_bookfun/bookfun/Public/i/js/jquery.min.js
+	thinkphp_bookfun/bookfun/Public/v/css/_notes/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+	thinkphp_bookfun/bookfun/Public/v/css/_notes/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+	thinkphp_bookfun/bookfun/Public/v/css/_notes/js/bootstrap.min.js
+	thinkphp_bookfun/bookfun/Public/v/css/_notes/js/jquery.min.js
+	thinkphp_bookfun/bookfun/Public/v/css/bootstrap-glyphicons.css
+	thinkphp_bookfun/bookfun/Public/v/css/bootstrap-theme.min.css
+	thinkphp_bookfun/bookfun/Public/v/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.css
+	thinkphp_bookfun/bookfun/Public/v/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css
+	thinkphp_bookfun/bookfun/Public/v/css/bootstrap.css
+	thinkphp_bookfun/bookfun/Public/v/css/bootstrap.min.css
+	thinkphp_bookfun/bookfun/Public/v/css/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+	thinkphp_bookfun/bookfun/Public/v/css/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+	thinkphp_bookfun/bookfun/Public/v/css/js/bootstrap.min.js
+	thinkphp_bookfun/bookfun/Public/v/css/js/jquery.min.js
+	thinkphp_bookfun/bookfun/Public/v/css/master.css
+	thinkphp_bookfun/bookfun/Public/v/css/style.css
+	thinkphp_bookfun/bookfun/Public/v/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+	thinkphp_bookfun/bookfun/Public/v/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+	thinkphp_bookfun/bookfun/Public/v/js/bootstrap.min.js
+	thinkphp_bookfun/bookfun/Public/v/js/jquery.min.js
+	thinkphp_bookfun/bookfun/bookfun/Conf/config.php
+	thinkphp_bookfun/bookfun/bookfun/Lib/Action/BookCenterAction.class.php
+	thinkphp_bookfun/bookfun/bookfun/Lib/Action/MainPageAction.class.php
+	thinkphp_bookfun/bookfun/bookfun/Lib/Action/PersonalCenterAction.class.php
+	thinkphp_bookfun/bookfun/bookfun/Runtime/Cache/06ad3bc29ddff00bd01cfa352b2addc4.php
+	thinkphp_bookfun/bookfun/bookfun/Runtime/Cache/286a13d13d63aafe027e204a21a0bc68.php
+	thinkphp_bookfun/bookfun/bookfun/Runtime/Cache/29b96f4e370e1e701bf60c11c2cca2a2.php
+	thinkphp_bookfun/bookfun/bookfun/Runtime/Cache/8670e9613192d46b1082afb091878a07.php
+	thinkphp_bookfun/bookfun/bookfun/Runtime/Cache/c0040beea77dbb89dad4044023c6d2c3.php
+	thinkphp_bookfun/bookfun/bookfun/Runtime/Cache/c0afe5b75fedb0e98d0f2fa544598055.php
+	thinkphp_bookfun/bookfun/bookfun/Runtime/Cache/d5016badc3c509ccbd6269af98407e6a.php
+	thinkphp_bookfun/bookfun/bookfun/Runtime/Cache/f9e3a4cc518850d9da9e4e8dfee60209.php
+	thinkphp_bookfun/bookfun/bookfun/Runtime/~runtime.php
+	thinkphp_bookfun/bookfun/bookfun/Tpl/BookCenter/bs_show.html
+	thinkphp_bookfun/bookfun/bookfun/Tpl/BookCenter/hot_book.html
+	thinkphp_bookfun/bookfun/bookfun/Tpl/BookCenter/search_book.html
+	thinkphp_bookfun/bookfun/bookfun/Tpl/BookCenter/upload_show.html
+	thinkphp_bookfun/bookfun/bookfun/Tpl/Login/index.html
+	thinkphp_bookfun/bookfun/bookfun/Tpl/MainPage/classify.html
+	thinkphp_bookfun/bookfun/bookfun/Tpl/MainPage/main_page.html
+	thinkphp_bookfun/bookfun/bookfun/Tpl/PersonalCenter/center_show.html
+	thinkphp_bookfun/bookfun/bookfun/Tpl/PersonalCenter/my_collection.html
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	deleted:    LICENSE
+#	deleted:    MyWeb/.buildpath
+#	deleted:    MyWeb/.project
+#	deleted:    MyWeb/.settings/org.eclipse.php.core.prefs
+#	deleted:    MyWeb/Setbook.php
+#	deleted:    MyWeb/Show.html
+#	deleted:    MyWeb/center.php
+#	deleted:    MyWeb/check_comment.php
+#	deleted:    MyWeb/check_del_ok.php
+#	deleted:    MyWeb/check_delete_user.php
+#	deleted:    MyWeb/checks.php
+#	deleted:    MyWeb/classify.php
+#	deleted:    MyWeb/collection.php
+#	deleted:    MyWeb/css/_notes/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+#	deleted:    MyWeb/css/_notes/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+#	deleted:    MyWeb/css/_notes/js/bootstrap.min.js
+#	deleted:    MyWeb/css/_notes/js/jquery.min.js
+#	deleted:    MyWeb/css/bootstrap-glyphicons.css
+#	deleted:    MyWeb/css/bootstrap-theme.min.css
+#	deleted:    MyWeb/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.css
+#	deleted:    MyWeb/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css
+#	deleted:    MyWeb/css/bootstrap.css
+#	deleted:    MyWeb/css/bootstrap.min.css
+#	deleted:    MyWeb/css/fonts/glyphicons-halflings-regular.eot
+#	deleted:    MyWeb/css/fonts/glyphicons-halflings-regular.svg
+#	deleted:    MyWeb/css/fonts/glyphicons-halflings-regular.ttf
+#	deleted:    MyWeb/css/fonts/glyphicons-halflings-regular.woff
+#	deleted:    MyWeb/css/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+#	deleted:    MyWeb/css/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+#	deleted:    MyWeb/css/js/bootstrap.min.js
+#	deleted:    MyWeb/css/js/jquery.min.js
+#	deleted:    MyWeb/css/master.css
+#	deleted:    MyWeb/css/style.css
+#	deleted:    MyWeb/delete_book.php
+#	deleted:    MyWeb/delete_collection.php
+#	deleted:    MyWeb/delete_user.php
+#	deleted:    MyWeb/fonts/glyphicons-halflings-regular.eot
+#	deleted:    MyWeb/fonts/glyphicons-halflings-regular.svg
+#	deleted:    MyWeb/fonts/glyphicons-halflings-regular.ttf
+#	deleted:    MyWeb/fonts/glyphicons-halflings-regular.woff
+#	deleted:    MyWeb/function.php
+#	deleted:    "MyWeb/images/QQ\345\233\276\347\211\2072014101105249.jpg"
+#	deleted:    MyWeb/images/bg.gif
+#	deleted:    MyWeb/images/btn.gif
+#	deleted:    MyWeb/images/com.jpg
+#	deleted:    MyWeb/images/delete.gif
+#	deleted:    MyWeb/images/image_01.gif
+#	deleted:    MyWeb/images/image_02.gif
+#	deleted:    MyWeb/images/image_03.gif
+#	deleted:    MyWeb/images/image_04.gif
+#	deleted:    MyWeb/images/image_05.gif
+#	deleted:    MyWeb/images/image_06.gif
+#	deleted:    MyWeb/images/image_07.gif
+#	deleted:    MyWeb/images/image_08.gif
+#	deleted:    MyWeb/images/image_09.jpg
+#	deleted:    MyWeb/images/image_10.gif
+#	deleted:    MyWeb/images/image_11.gif
+#	deleted:    MyWeb/images/image_12.gif
+#	deleted:    MyWeb/images/index_01.gif
+#	deleted:    MyWeb/images/index_02.gif
+#	deleted:    MyWeb/images/index_03.gif
+#	deleted:    MyWeb/images/index_04.gif
+#	deleted:    MyWeb/images/index_05.jpg
+#	deleted:    MyWeb/images/index_06.gif
+#	deleted:    MyWeb/images/index_07.gif
+#	deleted:    MyWeb/images/index_08.gif
+#	deleted:    MyWeb/images/index_09.gif
+#	deleted:    MyWeb/images/update.gif
+#	deleted:    MyWeb/images/xing.gif
+#	deleted:    MyWeb/index.php
+#	deleted:    MyWeb/index2.php
+#	deleted:    MyWeb/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
+#	deleted:    MyWeb/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.js
+#	deleted:    MyWeb/js/bootstrap.min.js
+#	deleted:    MyWeb/js/jquery.min.js
+#	deleted:    MyWeb/login.php
+#	deleted:    MyWeb/login1.php
+#	deleted:    MyWeb/logout.php
+#	deleted:    MyWeb/main.php
+#	deleted:    MyWeb/menu.php
+#	deleted:    MyWeb/mian1.php
+#	deleted:    MyWeb/person_data1.php
+#	deleted:    MyWeb/register.php
+#	deleted:    MyWeb/register1.php
+#	deleted:    MyWeb/right.php
+#	deleted:    MyWeb/search.php
+#	deleted:    MyWeb/search_book.php
+#	deleted:    MyWeb/search_user.php
+#	deleted:    MyWeb/show.php
+#	deleted:    MyWeb/show_collection.php
+#	deleted:    MyWeb/uploadfile/image_04.gif
+#	deleted:    MyWeb/uploadfile/image_05 (2).png
+#	deleted:    MyWeb/uploadfile/image_05 (3).png
+#	deleted:    MyWeb/uploadfile/image_05.gif
+#	deleted:    MyWeb/uploadfile/image_06.gif
+#	modified:   bookfun/action/classify.php
+#	modified:   bookfun/action/collection.php
+#	modified:   bookfun/action/delete_collection.php
+#	modified:   bookfun/action/hotbook.php
+#	modified:   bookfun/action/login.php
+#	modified:   bookfun/action/logout.php
+#	modified:   bookfun/action/person_data1.php
+#	modified:   bookfun/action/register.php
+#	modified:   bookfun/action/search.php
+#	modified:   bookfun/action/setbook.php
+#	modified:   bookfun/action/setcomment.php
+#	modified:   bookfun/action/show_collection.php
+#	modified:   bookfun/action/showmore.php
+#	new file:   bookfun/background/change.php
+#	modified:   bookfun/background/check_comment.php
+#	modified:   bookfun/background/check_del_ok.php
+#	modified:   bookfun/background/check_delete_user.php
+#	modified:   bookfun/background/checks.php
+#	modified:   bookfun/background/delete_book.php
+#	modified:   bookfun/background/delete_user.php
+#	modified:   bookfun/background/function.php
+#	modified:   bookfun/background/index2.php
+#	modified:   bookfun/background/main.php
+#	modified:   bookfun/background/menu.php
+#	modified:   bookfun/background/mian1.php
+#	renamed:    MyWeb/page_book.php -> bookfun/background/page_book.php
+#	renamed:    MyWeb/page_user.php -> bookfun/background/page_user.php
+#	modified:   bookfun/background/search_book.php
+#	modified:   bookfun/background/search_user.php
+#	new file:   bookfun/view/bootstrap.min(1).js
+#	modified:   bookfun/view/center.php
+#	renamed:    templates/css/bootstrap.min.css -> bookfun/view/css/bootstrap.min.css
+#	modified:   bookfun/view/home.php
+#	new file:   bookfun/view/img/750315jins1020.jpg
+#	new file:   bookfun/view/img/home-top.gif
+#	new file:   bookfun/view/img/xijinpingxin750x315.jpg
+#	new file:   bookfun/view/img/xs750x315_sq_20141034.jpg
+#	modified:   bookfun/view/show.php
+#	modified:   bookfun/view/upload.php
+#	new file:   bookfun/view/uploadfile/20141030151406.jpg
+#	new file:   bookfun/view/uploadfile/20141030151836.jpg
+#	new file:   bookfun/view/uploadfile/20141030151845.jpg
+#	new file:   bookfun/view/uploadfile/20141030152026.jpg
+#	new file:   bookfun/view/uploadfile/20141030152343.jpg
+#	new file:   bookfun/view/uploadfile/20141030152500.jpg
+#	new file:   bookfun/view/uploadfile/20141030152724.jpg
+#	new file:   bookfun/view/uploadfile/20141030152726.jpg
+#	new file:   bookfun/view/uploadfile/20141030152823.jpg
+#	new file:   bookfun/view/uploadfile/20141030152836.jpg
+#	new file:   bookfun/view/uploadfile/20141030152933.jpg
+#	new file:   bookfun/view/uploadfile/20141030153138.jpg
+#	new file:   bookfun/view/uploadfile/20141030153319.jpg
+#	new file:   bookfun/view/uploadfile/20141030153351.jpg
+#	deleted:    "kk/\346\226\260\345\273\272\346\226\207\346\234\254\346\226\207\346\241\243.txt"
+#	deleted:    per_center/center.php
+#	deleted:    per_center/person_data1.php
+#	deleted:    templates/css/bootstrap-glyphicons.css
+#	deleted:    templates/css/bootstrap-theme.min.css
+#	deleted:    templates/fonts/glyphicons-halflings-regular.eot
+#	deleted:    templates/fonts/glyphicons-halflings-regular.svg
+#	deleted:    templates/fonts/glyphicons-halflings-regular.ttf
+#	deleted:    templates/fonts/glyphicons-halflings-regular.woff
+#	deleted:    templates/index.html
+#	deleted:    templates/js/bootstrap.min.js
+#	deleted:    templates/js/jquery.min.js
+#	deleted:    templates/upload.html
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/10765131_083058419000_2.jpg"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/bg_x.png"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/css/bootstrap.css"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/css/bootstrap.min.css"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/fonts/glyphicons-halflings-regular.eot"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/fonts/glyphicons-halflings-regular.svg"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/fonts/glyphicons-halflings-regular.ttf"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/fonts/glyphicons-halflings-regular.woff"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/\344\270\252\344\272\272\344\270\255\345\277\203v1.01.html"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/\345\220\216\345\217\260\347\231\273\351\231\206v1.00.html"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/\346\220\234\347\264\242\346\230\276\347\244\272\347\225\214\351\235\242v1.01.html"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/\346\250\241\346\235\277v1.01.html"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/\346\254\242\350\277\216\347\225\214\351\235\242v1.01.html"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/\346\254\242\350\277\216\347\225\214\351\235\242v2.0.html"
+#	deleted:    "\346\210\220\345\223\201\347\225\214\351\235\242/\351\246\226\351\241\265v1.01.html"
+#
+

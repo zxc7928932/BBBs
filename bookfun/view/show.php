@@ -10,43 +10,63 @@
     <style type="text/css"></style>
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background:  #0F0F0F;"
-></button>
-            <a class="navbar-brand" href="home.html" style="font-size:25px;font-weight:bold;color:#AAAAAA;">
+       <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+         
+          </button>
+            <a class="navbar-brand" href="home.php" style="font-size:25px;font-weight:bold;color:#AAAAAA;">
+            Book.fun
+              
+            </a> 
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background:  #0F0F0F;">
+
+           <ul class="nav navbar-nav">
+              <li > 
+              <a href="home.php">
                 <span class="glyphicon glyphicon-home"></span>
-                Book.fun
-            </a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li  >
-                    <a href="home.html"></span>
-                    首页
-                </a>
+                 首页
+              </a>
+               </li>
+              <li> <a href="upload.php">
+                    <span class="glyphicon glyphicon-cloud-upload"></span>
+
+                     上传书籍
+                   </a> 
+              </li>
+           </ul>
+
+           <form class="navbar-form navbar-right" role="search" action="../action/search.php" method="post">
+
+              <div class="form-group" id="nav-search">
+                 <input type="text" name="txt_book" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
+              </div>
+
+              <button type="submit" name="submit" value="submit"class="btn btn-primary" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
+           </form>
+
+          <ul class="nav navbar-nav navbar-right">
+
+           <li >
+              <a href="center.php">
+                <span class="glyphicon glyphicon-user">
+                  个人中心
+              </a> 
             </li>
-            <li class="active">
-                <a href="#">书籍</a>
+
+             <li >
+              <a href="../action/logout.php">
+                <span class="glyphicon glyphicon-off">
+                退出账户
+              </a> 
             </li>
-        </ul>
-        <form class="navbar-form navbar-right" role="search" action="get">
-            <div class="form-group form-group-search" id="nav-search">
-                <input type="text" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
-            </div>
-            <button type="submit" class="btn btn-default" style="float:right;margin-right:20px;">
-                <span class="glyphicon glyphicon-search"></span>
-                搜索
-            </button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-            <li style="margin-left:50px;">
-                <a href="个人中心v1.01.html">
-                    <span class="glyphicon glyphicon-user">个人中心</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+
+           </ul>
+      </div>
+   </nav>
 <?php 
     session_start();
     $link=mysql_connect("localhost","root","zxc7928932")or die("数据库服务器连接错误".mysql_error());//链接数据库
@@ -55,7 +75,7 @@
     $sql=mysql_query("select * from books where id =$id");                      //检索书籍
     $row=mysql_fetch_object($sql);
     $uid=$_SESSION['number'];
-    $uid=4;
+    
 
     $result=mysql_query("select * from collection where user=$uid and book=$id");
     $num = mysql_num_rows($result);
@@ -98,10 +118,10 @@
 
             <div class="col-md-2 column">
             <?php if($num==0){ ?>
-             <a href=collection.php?id=".<?php $row->id?>." class="btn btn-default btn-success" contenteditable="true"> 收藏 </a>
+             <a href="../action/collection.php?id=<?php echo $row->id;?>" class="btn btn-default" role="button">收藏</a></p>
              <?php }
              else{ ?>
-             <a href=delete_collection.php?id=".<?php $row->id?>." class="btn btn-default btn-danger" contenteditable="true"> 取消收藏</a>
+               <a href="../action/delete_collection.php?id=<?php echo $row->id;?>" class="btn btn-default" role="button">取消收藏</a></p>
              <?php }?>
             </div>
         </div>

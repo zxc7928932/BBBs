@@ -1,4 +1,4 @@
-	<?php
+﻿	<?php
 		include("function.php");
 		header("Content-Type:text/html;charset=utf-8");
 		if($_POST["submit"]!=""){
@@ -10,7 +10,7 @@
 		$path="../view/uploadfile/";
 		$filename = $_POST['filename'];
 		
-		
+		echo $bookname;
 		if(!file_exists($path)) 
 		{ 
 		mkdir("$path", 0700); 
@@ -21,7 +21,7 @@
 		$name=$_FILES["filename"]["name"];
 
 		$end=strstr($name,'.');
-		echo $end;
+		
 		$_FILES["filename"]["name"]=date('YmdHis', strtotime('now'))."$end";
 
 		$tp = array("image/gif","image/pjpeg","image/jpeg","image/png"); 
@@ -54,8 +54,8 @@
 		// ratio. This prevents the image from being "stretched"
 		// or "squashed". If you prefer some max width other than
 		// 600, simply change the $newwidth variable
-		$newwidth=100;
-		$newheight=200;
+		$newwidth=150;
+		$newheight=150;
 		$tmp=imagecreatetruecolor($newwidth,$newheight);
 
 		// this line actually does the image resizing, copying from the original
@@ -73,12 +73,14 @@
 		
 		$link=mysql_connect("localhost","root","zxc7928932")or die("数据库服务器连接错误".mysql_error());//链接数据库
 	    mysql_select_db("guestinfo",$link) or die("数据库访问错误".mysql_error());    //选择数据库
-	    mysql_query("set names gb2312");                                            //选择字符集标准格式
+	    mysql_query("set names utf-8");                                            //选择字符集标准格式
 	    $avatar = $file2;
 
-		$row=mysql_query("select *from books where bookname='$bookname'");		//此用户名的数据
+		$row=mysql_query("select * from books where bookname ='$bookname'");	//此用户名的数据
+		$sql=mysql_fetch_object($row);
+		$author1=$sql->author;
 		$num=mysql_num_rows($row);													//此用户名数据行数
-		if($num){		//如果已有，说明已有
+		if(($num!=0)&&($author==$author1)){		//如果已有，说明已有
 			echo "<script language=javascript>alert('书已存在');history.back();</script>";
 		}
 		$sql=mysql_query("insert into books(bookname,author,press,content,image,classify)values('$bookname','$author','$press','$content','$avatar','$classify')")or die("数据库服务器连接错误".mysql_error());

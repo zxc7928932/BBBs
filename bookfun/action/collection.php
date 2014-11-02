@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	header("Content-Type:text/html;charset=utf-8");
 	session_start();
 	$bookid =$id;
@@ -14,7 +14,7 @@
 	if($num == 0)
 	{	
 		/*插入收藏*/
-		$cmd1 = "insert into collection (uid,bookid)values(".$uid.",".$bookid.")";
+		$cmd1 = "insert into collection (user,book)values('$uid','$bookid')";
 		$result1 = mysql_query($cmd1);
 		if(!$result1)
 		{
@@ -26,7 +26,7 @@
   			$row=mysql_fetch_object($sql); 
   			$num = $row->count;
   			$num += 5;
-  			$sql=mysql_query("update books set count = $num where id = $bookid");
+			$sql=mysql_query("update books set count = $num where id = $bookid");
   			if(!$sql){
 				echo "<script> alert('系统繁忙，请重试!');window.location.href='../view/show.php?id=$id';</script>";
 			}

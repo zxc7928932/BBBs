@@ -29,7 +29,7 @@
 	$info=mysql_fetch_object($row);
 	$_SESSION['number']=$info->uid;
 	mysql_close($link);			//关闭
-    echo "<script> alert('注册成功!');window.location.href='../view/home.php';</script>";
+    echo "<script> window.location.href='../view/home.php';</script>";
 }
 	}
 

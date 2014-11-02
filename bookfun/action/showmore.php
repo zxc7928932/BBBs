@@ -1,12 +1,10 @@
-<?php
+﻿<?php
     header("Content-Type: text/html; charset=utf-8");
 	$link1 = mysql_connect("localhost","root","zxc7928932")or die("数据库服务器连接错误".mysql_error());
 	mysql_select_db("guestinfo",$link1) or die("数据库访问错误".mysql_error());  	
 	mysql_query("set names utf-8");
 	$id=$_GET['bookid'];
 	$cnt=$_GET['cnt'];
-    $cnt=1;
-    $id=1;
 	$qua="select * from comment where book_id=$id order by book_id desc limit $cnt,5";
 	$sql=mysql_query($qua);
 	$i=0;

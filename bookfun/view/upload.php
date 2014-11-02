@@ -14,23 +14,66 @@
     <a class="navbar-brand" href="home.html" style="font-size:25px;font-weight:bold;color:#AAAAAA;"> <span class="glyphicon glyphicon-home"></span> Book.fun </a> </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li > <a href="home.html"> </span> 首页 </a> </li>
-      <li class="active"> <a href="#">书籍</a> </li>
-    </ul>
-    <form class="navbar-form navbar-right" role="search" action="search.php" method="post" >
-      <div class="form-group form-group-search" id="nav-search">
-        <input type="text" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+         
+          </button>
+            <a class="navbar-brand" href="home.php" style="font-size:25px;font-weight:bold;color:#AAAAAA;">
+            Book.fun
+              
+            </a> 
       </div>
-      <button type="submit" class="btn btn-default" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
-    </form>
-    <ul class="nav navbar-nav navbar-right">
-      <li style="margin-left:50px;"> <a href="个人中心v1.01.html"> <span class="glyphicon glyphicon-user"> 个人中心 </a> </li>
-    </ul>
-  </div>
-</nav>
-<div class="container ">
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background:  #0F0F0F;">
+
+           <ul class="nav navbar-nav">
+              <li > 
+              <a href="home.php">
+                <span class="glyphicon glyphicon-home"></span>
+                 首页
+              </a>
+               </li>
+              <li> <a href="upload.php">
+                    <span class="glyphicon glyphicon-cloud-upload"></span>
+
+                     上传书籍
+                   </a> 
+              </li>
+           </ul>
+
+           <form class="navbar-form navbar-right" role="search" action="../action/search.php" method="post">
+
+              <div class="form-group" id="nav-search">
+                 <input type="text" name="txt_book" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
+              </div>
+
+              <button type="submit" name="submit" value="submit"class="btn btn-primary" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
+           </form>
+
+          <ul class="nav navbar-nav navbar-right">
+
+           <li >
+              <a href="center.php">
+                <span class="glyphicon glyphicon-user">
+                  个人中心
+              </a> 
+            </li>
+
+             <li >
+              <a href="../action/logout.php">
+                <span class="glyphicon glyphicon-off">
+                退出账户
+              </a> 
+            </li>
+
+           </ul>
+      </div>
+   </nav>
+   <div class="container ">
   <div class="row clearfix">
-    <div class="col-md-12 column"> </div>
+    
   </div>
   <div class="row clearfix">
     <div class="col-md-12 column">
