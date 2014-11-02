@@ -34,13 +34,13 @@
                     <td height="249" align="center" valign="top">
 					<table width="550" border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF" bgcolor="#999999">
                       <tr align="center" bgcolor="#f0f0f0">
-                        <td width="221">用户</td>
+                        <td width="221">用户名</td>
                         <td width="329">签名</td>
                       </tr>
 					<?php
 					$conn=mysql_connect("localhost","root","zxc7928932") or die("数据库服务器连接错误".mysql_error());
 					mysql_select_db("guestinfo",$conn) or die("数据库访问错误".mysql_error());
-					mysql_query("set names gb2312");
+					mysql_query("set names utf-8");
 					/*  $page为当前页，如果$page为空，则初始化为1  */
 					if ($page==""){
 						$page=1;}

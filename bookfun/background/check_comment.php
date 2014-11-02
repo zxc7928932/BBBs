@@ -65,19 +65,19 @@ form.submit();
 						$rows=mysql_num_rows($sql);
 						$page_count=ceil($rows/$page_size);	  	//根据记录总数除以每页显示的记录数求出所分的页数
 						$offset=($page-1)*$page_size;						//计算下一页从第几条数据开始循环  
-						$sql=mysql_query("select * from comment where book_id =$id limit $offset, $page_size");
-						$row=mysql_fetch_object($sql);
-						if(!$row){
+						$sql=mysql_query("select * from comment where book_id =$id limit $offset, $page_size");//搜索当前页信息
+						$row=mysql_fetch_object($sql);					//得到对象
+						if(!$row){		//若为空
 							echo "<font color='red'>暂无此书评论!</font>";
 						}
 						do{
 						$user=$row->user;
-						$sql1=mysql_query("select * from register where uid ='$user'");
+						$sql1=mysql_query("select * from register where uid ='$user'");//得到该评论用户信息
 						$row1=mysql_fetch_object($sql1);	
 						?>
                       <tr bgcolor="#FFFFFF">
-                        <td><?php echo $row1->Username;?></td>
-                        <td><?php echo chinesesubstr($row->content, 0, 30);
+                        <td><?php echo $row1->Username;?></td>					
+                        <td><?php echo chinesesubstr($row->content, 0, 30);		//输出评论内容
                         if(strlen($row->content)>30)
                         echo "...";
                          ?></td>

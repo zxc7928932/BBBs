@@ -6,10 +6,10 @@
     mysql_query("set names utf-8");                                      //选择字符集标准格式
     $id=$_GET[id];
     $sql=mysql_query("delete from books where id=$id");                  //删除书本信息
-    if($sql){
+    if($sql){//删除成功跳转
         echo "<script>alert('信息删除成功！');history.back();window.location.href='delete_book.php?id=$id';</script>";
     }
-    else{
+    else{//删除失败跳转
         echo "<script>alert('信息删除失败！');history.back();window.location.href='delete_book.php?id=$id';</script>";
     }
     ?>

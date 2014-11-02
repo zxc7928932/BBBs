@@ -42,7 +42,7 @@
 					<?php
 					$link=mysql_connect("localhost","root","zxc7928932")or die("数据库服务器连接错误".mysql_error());//链接数据库
     				mysql_select_db("guestinfo",$link) or die("数据库访问错误".mysql_error());    //选择数据库
-    				mysql_query("set names gb2312");                                            //选择字符集标准格式
+    				mysql_query("set names utf-8");                                            //选择字符集标准格式
 					/*  $page为当前页，如果$page为空，则初始化为1  */
 					if ($page==""){
 						$page=1;}
@@ -53,7 +53,7 @@
 						$message_count=mysql_result($result,0,"total");		//要显示的总记录数
 						$page_count=ceil($message_count/$page_size);	  	//根据记录总数除以每页显示的记录数求出所分的页数
 						$offset=($page-1)*$page_size;						//计算下一页从第几条数据开始循环  
-						$sql=mysql_query("select * from books order by id desc limit $offset, $page_size");
+						$sql=mysql_query("select * from books order by id desc limit $offset, $page_size");//得到当前页信息
 						$row=mysql_fetch_object($sql);
 						if(!$row){
 							echo "<font color='red'>暂无书籍信息!</font>";
