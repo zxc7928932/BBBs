@@ -5,6 +5,15 @@
     mysql_select_db("guestinfo",$link) or die("数据库访问错误".mysql_error());    //选择数据库
     mysql_query("set names utf-8");                                      //选择字符集标准格式
     $id=$_GET[id];
+    $sql1=mysql_query("select * from books where id =$id");
+    $row1=mysql_fetch_object($sql1);
+    $filename=$row1->image;
+    echo $filename;
+    if (file_exists($filename)) { 
+    unlink($filename); 
+    } else { 
+    echo "文件不存在"; 
+    }
     mysql_query("SET FOREIGN_KEY_CHECKS = 0");
     $sql=mysql_query("delete from books where id=$id");                  //删除书本信息
     if($sql){//删除成功跳转
