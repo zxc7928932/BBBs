@@ -1,5 +1,5 @@
 <?php
-	header("Content-Type:text/html; charset=utf-8");
+
 	include("function.php");	
 	session_start();						//开启session
 	if($_POST["submit"]!=""){				//已提交
@@ -26,9 +26,9 @@
 	echo "<script> alert('您输入的密码不正确!');window.location.href='main.php';</script>";
 	}
 	else {										//密码正确，转至主页
-		$_SESSION['member']=$info->Username;	//用户名存入session
+		$_SESSION['member']=$info->admin;	//用户名存入session
 		
-		echo "<script> alert('登录成功，点击跳转管理页面!');window.location.href='index2.php';</script>";
+		echo "<script> window.location.href='index2.php';</script>";
 	}
 	
 	}

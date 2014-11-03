@@ -1,4 +1,6 @@
-﻿<?php if($_SESSION['member']==""){
+﻿<?php 
+	session_start();
+	if($_SESSION['member']==""){
 	echo "<script>alert('请先登录！');history.back();window.location.href=main.php;</script>";
 }
 ?>
