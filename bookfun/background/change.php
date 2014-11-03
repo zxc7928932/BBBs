@@ -1,5 +1,5 @@
 <?php 
-	
+	session_start();
 	header("Content-Type:text/html;charset=utf-8");
 	if($_SESSION['member']==""){
 	echo "<script>alert('请先登录！');history.back();window.location.href=main.php;</script>";

@@ -23,7 +23,9 @@
             <td><?php include("menu.php");?></td>
           </tr>
         </table></td>
-		<td height="34" background="images/image_04.gif">&nbsp;			</td>
+		<td height="34" background="images/image_04.gif"style="background-repeat :no-repeat">
+
+			<a href="logout.php" style="margin-left:280px;">退出登录</a>		</td>
 	</tr>
 	<tr>
 		<td height="38" background="images/image_06.gif">&nbsp;			</td>
