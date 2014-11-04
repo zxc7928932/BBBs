@@ -63,6 +63,7 @@
                 <span class="glyphicon glyphicon-home"></span>
                  首页
               </a>
+              <li > 
                </li>
               <li> <a href="{:U('BookCenter/upload_show')}">
                     <span class="glyphicon glyphicon-cloud-upload"></span>
@@ -88,7 +89,12 @@
                   个人中心
               </a> 
             </li>
-
+            <li>
+            <a href="{:U('Login/logout')}">
+                <span class="glyphicon glyphicon-log-out"></span>
+                 退出
+              </a>
+            </li>
            </ul>
       </div>
    </nav>
@@ -202,7 +208,7 @@
     <a href= "{$vo.myURL}">
      <img class="img-circle" src="__PUBLIC__/Uploads/{$vo.image}" >
    </a>
-     <p style="text-align:center">{$vo.bookname}</p>
+     <p style="text-align:center;color:blue">{$vo.bookname}</p>
      <p style="text-align:center"><small>{$vo.author}</small></p>
   </div>
   </volist>

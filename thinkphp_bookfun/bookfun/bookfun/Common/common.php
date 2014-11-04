@@ -6,7 +6,7 @@
     $flag = 0;
     while($flag < $len)
     {
-      if(ord(substr($str,$i,1))>0xa0)
+      if(ord(substr($str,$i,1)) >= 0xE4)
       {
         $tmp .= substr($str,$i,3);
         $i += 3;

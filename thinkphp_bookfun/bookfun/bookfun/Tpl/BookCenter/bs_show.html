@@ -55,7 +55,12 @@
                   个人中心
               </a> 
             </li>
-
+            <li>
+            <a href="{:U('Login/logout')}">
+                <span class="glyphicon glyphicon-log-out"></span>
+                 退出
+              </a>
+            </li>
            </ul>
       </div>
    </nav>
@@ -150,11 +155,11 @@
                                             <img src="__PUBLIC__/Uploads/{$user.photo}" alt="user image">{$user.username}</a>
                                     </div>
                                 </div>
-                                <div class="comment-message">
+                        
                                     <p>
-                                        {$vo.content}
+                                      <pre class="comment-message">{$vo.content}</pre>
                                     </p>
-                                </div>
+        
                             </div>
                             </volist>
                     </div>
