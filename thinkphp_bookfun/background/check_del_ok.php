@@ -10,7 +10,6 @@
     $filename=$row1->image;
     $filename = "../bookfun/Public/Uploads/".$filename;
     if (file_exists($filename)) {
-    if($filename!="deault.jpg") 
     unlink($filename); 
     } 
     mysql_query("SET FOREIGN_KEY_CHECKS = 0");

@@ -9,11 +9,11 @@
     $row1=mysql_fetch_object($sql1);
      $filename=$row1->photo;
     $filename = "../bookfun/Public/Uploads/".$filename;
-    if (file_exists($filename)) { 
-    unlink($filename); 
-    } else { 
-    echo "文件不存在"; 
-    }
+    if (file_exists($filename)) {
+    if($filename!="deault.jpg") 
+    unlink($filename);
+
+    } 
 	mysql_query("SET FOREIGN_KEY_CHECKS = 0");
 	$sql=mysql_query("delete from user where uid=$id");//删除信息
 	if($sql){	//删除成功跳转
