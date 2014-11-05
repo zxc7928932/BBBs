@@ -10,7 +10,8 @@
      $filename=$row1->photo;
     $filename = "../bookfun/Public/Uploads/".$filename;
     if (file_exists($filename)) { 
-    unlink($filename); 
+    	if($filename!="deault.jpg")
+    		unlink($filename); 
     }
 	mysql_query("SET FOREIGN_KEY_CHECKS = 0");
 	$sql=mysql_query("delete from comment where uid=$id");
