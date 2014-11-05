@@ -51,7 +51,8 @@ class PersonalCenterAction extends Action
 			else
 				$info = $upload->getUploadFileInfo();
 			$old = $result['photo'];
-			unlink("./Public/Uploads/".$old);//删除旧图片
+			if($old != "default.jpg")
+				unlink("./Public/Uploads/".$old);//删除旧图片
 			$data['photo'] = 'thumb_'.$info[0]['savename'];
 			$result = $User->where("uid = $uid")->save($data);//更改个人信息
 			if($result)

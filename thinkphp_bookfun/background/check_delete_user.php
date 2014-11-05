@@ -14,6 +14,7 @@
     		unlink($filename); 
     }
 	mysql_query("SET FOREIGN_KEY_CHECKS = 0");
+	$sql=mysql_query("delete from collection where uid=$id");
 	$sql=mysql_query("delete from comment where uid=$id");
 	$sql=mysql_query("delete from user where uid=$id");//删除信息
 	if($sql){	//删除成功跳转
