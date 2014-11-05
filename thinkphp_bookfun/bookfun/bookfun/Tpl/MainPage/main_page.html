@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>首页</title>
+    <title>首页 - book.fun</title>
 
     <meta charset="UTF-8">
     <meta name="Author" content="Soleil-kk">
@@ -41,7 +41,7 @@
 
 </head>
 
-<body>
+<body style="overflow-x:hidden">
 
    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
 
@@ -59,7 +59,7 @@
 
            <ul class="nav navbar-nav">
               <li > 
-              <a href="{:U('MainPage/main_page')}">
+              <a href="{:U('MainPage/main_page')}" >
                 <span class="glyphicon glyphicon-home"></span>
                  首页
               </a>
@@ -123,7 +123,7 @@
     </div>
 
   
-    <div style="margin-left:200px;">
+    <div style="margin-left:110px;">
        <img src="__PUBLIC__/v/img/top.gif">
       
     </div>
@@ -170,9 +170,9 @@
   </div>
 
    <div class="page-header" style="margin:100px 0px 10px 1100px;height:160px">
-        <h6><span class="glyphicon glyphicon-signal"></span>
-          <a href="{:U('PersonalCenter/my_collection')}">我的收藏</a>    
-           <small style="color:blue">&nbspMy collection</small> 
+        <h6><span class="glyphicon glyphicon-tags"></span>
+        <a href="{:U('PersonalCenter/my_collection')}" style="color: black;">&nbsp;&nbsp;我的收藏</a>    
+           <small style="color:#C6E2FF;">&nbspMy collection</small> 
         </h6>
         {$info1}
         <ol>
@@ -182,9 +182,9 @@
         </ol>
  </div>
    <div class="page-header" style="margin:15px 0px 10px 1100px;height:220px">
-        <h6><span class="glyphicon glyphicon-signal"></span>
-          <a href="{:U('BookCenter/hot_book')}">最热图书</a>     
-           <small style="color:red">&nbsp&nbsp top5</small> 
+        <h6><span class="glyphicon glyphicon-stats"></span>
+          <a href="{:U('BookCenter/hot_book')}" style="color: #EE0000;">&nbsp;&nbsp;最热图书</a>     
+           <small style="color:#C6E2FF;">&nbsp&nbsp top5</small> 
         </h6>
         {$info2}
         <ol>
@@ -195,9 +195,9 @@
  </div>
  
  <div class="page-header" style="margin:20px 0px 10px 200px;">
-        <h5><span class="glyphicon glyphicon-heart-empty"></span>
+        <h5><span class="glyphicon glyphicon-heart-empty" style="color:#EE0000"></span>
           新书抢先看
-          <small style="color:green">Daily regular push popular books on the same day</small>  
+          <small style="color:#C6E2FF;">Daily regular push popular books on the same day</small>  
         </h5>
         
  </div>

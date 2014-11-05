@@ -15,7 +15,7 @@ class LoginAction extends Action
     	$User = D('user');
     	if($User->check_user($username,$pwd))//判断用户名和密码是否正确
     	{
-    		$this->success('登录成功！',U('MainPage/main_page'));
+    		$this->success('登录成功！',U('MainPage/main_page'),0);
     	}
     	else
     		$this->error('用户名或密码错误！');

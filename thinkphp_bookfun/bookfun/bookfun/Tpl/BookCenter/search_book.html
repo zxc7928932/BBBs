@@ -1,11 +1,12 @@
 <html>
 <head>
-<title>搜索结果</title>
+<title>搜索结果 - book.fun</title>
 <meta charset="utf-8">
 <meta name="Author" content="Soleil-kk">
 <meta name="Keywords" content="book.fun">
 <meta name="Description" content="兴趣书籍论坛">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/a/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/v/css/flat-ui.min.css">
 <script type="text/javascript" src="__PUBLIC__/a/js/bootstrap.js"></script>
 
 <style type="text/css">
@@ -22,7 +23,7 @@ li {
     list-style: none;
 }
 
-h3 {
+h5 {
     color: #1874CD;
     margin-left: 80px;
 }
@@ -41,7 +42,7 @@ h3 {
     display: inline;
     width: 230px;
     height: 400px;
-    margin: 40px;
+    margin: 0px;
 }
 
 #book_img {
@@ -52,7 +53,7 @@ h3 {
 
 </head>
 
-<body>
+<body style="overflow:hidden">
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
 
       <div class="navbar-header">
@@ -112,8 +113,8 @@ h3 {
 
 <div class="page-header" style="margin-top: 80px;">
 
-<h3><span class="glyphicon glyphicon-map-marker"></span> 书籍搜索结果 <small>The
-following is based on your keywords </small></h3>
+<h5><span class="glyphicon glyphicon-map-marker"></span> 书籍搜索结果 <small>The
+following is based on your keywords </small></h5>
 </div>
 &nbsp&nbsp{$search_info}
 <div class="row"> 
@@ -121,11 +122,11 @@ following is based on your keywords </small></h3>
 <div class="col-sm-6 col-md-4" id="book_form" style="margin-left: 80px">
 <div class="thumbnail"><img src="/bookfun/Public/Uploads/{$vo.image}">
 <div class="caption">
-<h4 style=" text-align:center;font-weight:bold;color:blue;">{$vo.bookname}</h4>
-<h4 style=" text-align:center;">作者：{$vo.author}</h4>
+<p style=" text-align:center;font-weight:bold;color:black;">{$vo.bookname}</p>
+<p style=" text-align:center;">作者：{$vo.author}</p>
 <p style=" text-align:center;">
-<a href={$vo.dir} class="btn btn-primary" role="button">详情</a>
-<a href={$vo.myURL} class="btn btn-default" role="button">{$vo.info}</a>
+<a href={$vo.dir} class="btn btn-primary" role="button">详情</a>&nbsp;
+<a href={$vo.myURL} class="btn btn-danger" role="button">{$vo.info}</a>
 </p>
 </div>
 </div>
