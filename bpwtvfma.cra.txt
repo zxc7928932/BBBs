@@ -1,0 +1,33 @@
+﻿Merge branch 'master' of https://github.com/Syslab-B/BBBs
+
+Conflicts:
+	thinkphp_bookfun/background/check_del_ok.php
+	thinkphp_bookfun/background/check_delete_user.php
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 3 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	deleted:    thinkphp_bookfun/bookfun/Public/Uploads/thumb_54529935b0729.jpg
+#	deleted:    thinkphp_bookfun/bookfun/Public/Uploads/thumb_54529c7ad958d.jpg
+#	deleted:    thinkphp_bookfun/bookfun/Public/Uploads/thumb_5452a4d10f4f0.jpg
+#
+# Untracked files:
+#	4lez3002.wg5.txt
+#	thinkphp_bookfun/bookfun/Public/Uploads/thumb_54529935b0729.jpg
+#	thinkphp_bookfun/bookfun/Public/Uploads/thumb_54529c7ad958d.jpg
+#	thinkphp_bookfun/bookfun/Public/Uploads/thumb_5452a4d10f4f0.jpg
+#
+
