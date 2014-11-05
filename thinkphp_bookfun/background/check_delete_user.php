@@ -8,9 +8,10 @@
     $sql1=mysql_query("select * from user where uid=$id");
     $row1=mysql_fetch_object($sql1);
      $filename=$row1->photo;
+     $flag = ($filename == "default.jpg");
     $filename = "../bookfun/Public/Uploads/".$filename;
     if (file_exists($filename)) { 
-    	if($filename!="deault.jpg")
+    	if(!$flag)
     		unlink($filename); 
     }
 	mysql_query("SET FOREIGN_KEY_CHECKS = 0");
