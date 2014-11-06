@@ -1,0 +1,48 @@
+CREATE TABLE `books` (
+  `bookname` char(20) NOT NULL,
+  `bookid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `author` char(30) NOT NULL,
+  `press` char(30) NOT NULL,
+  `content` char(254) NOT NULL,
+  `image` varchar(40) DEFAULT 'defaultbook.jpg',
+  `classify` char(20) DEFAULT NULL,
+  `count` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`bookid`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `user` (
+  `uid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) DEFAULT NULL,
+  `pwd` varchar(40) DEFAULT NULL,
+  `sex` varchar(7) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `signature` varchar(200) DEFAULT NULL,
+  `photo` varchar(30) DEFAULT 'default.jpg',
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `comment` (
+  `commentid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `uid` bigint(20) NOT NULL,
+  `bookid` bigint(20) NOT NULL,
+  `content` varchar(400) DEFAULT NULL,
+  PRIMARY KEY (`commentid`),
+  KEY `dd1` (`uid`),
+  KEY `dd2` (`bookid`),
+  CONSTRAINT `dd1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`) ON DELETE CASCADE,
+  CONSTRAINT `dd2` FOREIGN KEY (`bookid`) REFERENCES `books` (`bookid`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `collection` (
+  `bookid` bigint(20) NOT NULL,
+  `uid` bigint(20) NOT NULL,
+  KEY `aa1` (`bookid`),
+  KEY `aa2` (`uid`),
+  CONSTRAINT `aa1` FOREIGN KEY (`bookid`) REFERENCES `books` (`bookid`) ON DELETE CASCADE,
+  CONSTRAINT `aa2` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`) ON DELETE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `houtai` (
+  `Username` varchar(30) DEFAULT NULL,
+  `ad_password` varchar(40) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
