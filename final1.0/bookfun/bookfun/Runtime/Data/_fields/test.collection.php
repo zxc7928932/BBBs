@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'bookid', 1 => 'uid', '_autoinc' => false, '_type' => array ( 'bookid' => 'bigint(20)', 'uid' => 'bigint(20)', ), );?>
