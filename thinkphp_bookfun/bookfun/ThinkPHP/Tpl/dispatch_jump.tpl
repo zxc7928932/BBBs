@@ -17,22 +17,26 @@ body{ background: #fff; font-family: '微软雅黑'; color: #333; font-size: 16p
 <body>
 <div class="system-message">
 <present name="message">
-<h1>:)</h1>
+<div align="center" style="padding-top:120px;">
+<h1><img src="__PUBLIC__/v/img/success.jpg" /></h1>
 <p class="success"><?php echo($message); ?></p>
+</div>
 <else/>
-<h1>:(</h1>
+<div align="center" style="padding-top:120px;">
+<h1><img src="__PUBLIC__/v/img/error.jpg" /></h1>
 <p class="error"><?php echo($error); ?></p>
+</div>
 </present>
 <p class="detail"></p>
-<p class="jump">
-页面自动 <a id="href" href="<?php echo($jumpUrl); ?>">跳转</a> 等待时间： <b id="wait"><?php echo($waitSecond); ?></b>
+<p class="jump" align="center">
+页面自动 <a id="href" href="<?php echo($jumpUrl); ?>">跳转</a><b id="wait"></b>
 </p>
 </div>
 <script type="text/javascript">
 (function(){
 var wait = document.getElementById('wait'),href = document.getElementById('href').href;
 var interval = setInterval(function(){
-	var time = --wait.innerHTML;
+	var time = 0;
 	if(time <= 0) {
 		location.href = href;
 		clearInterval(interval);
