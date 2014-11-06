@@ -68,6 +68,7 @@ form.submit();
           $conn=mysql_connect("localhost","syslab","syslab") or die("数据库服务器连接错误".mysql_error());
           mysql_select_db("test",$conn) or die("数据库访问错误".mysql_error());
           mysql_query("set names utf8");
+          $page = $_GET['page'];
           if ($page==""){//刚刚跳转如该页 清空session
             unset($_SESSION['keyword']);
             $keyword=$_POST['txt_keyword'];
@@ -90,9 +91,9 @@ form.submit();
                 {
                   $cnt ++;
                   if($cnt == 1)
-                      $info .= "where Username like '%$name_arr[$i]%' ";
+                      $info .= "where username like '%$name_arr[$i]%' ";
                   else
-                      $info .= "or Username like '%$name_arr[$i]%'";
+                      $info .= "or username like '%$name_arr[$i]%'";
                 }
              }
              if($cnt == 0){
@@ -110,7 +111,7 @@ form.submit();
             $sql=mysql_query("select * from register $info limit $offset,$page_size");
             $row=mysql_fetch_object($sql);
             if(!$row){
-              echo "<font color='red'>暂无书籍信息!</font>";
+              echo "<font color='red'>暂无用户信息!</font>";
             }
             do{
             ?>

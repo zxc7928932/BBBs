@@ -67,7 +67,8 @@ form.submit();
                     <?php
                     $link=mysql_connect("localhost","syslab","syslab")or die("数据库服务器连接错误".mysql_error());//链接数据库
                     mysql_select_db("test",$link) or die("数据库访问错误".mysql_error());    //选择数据库
-                    mysql_query("set names utf8");                                            //选择字符集标准格式
+                    mysql_query("set names utf-8");
+                    $page = $_GET['page'];                                            //选择字符集标准格式
                     if ($page==""){//如果是刚刚跳转到该页 清空session 读入空字符
                     unset($_SESSION['keyword']);
                     $keyword=$_POST['txt_keyword'];
@@ -81,7 +82,7 @@ form.submit();
                     } 
           
                     $_SESSION['keyword']=$keyword;//存入session
-                    $user_name=trim($_SESSION['keyword']);
+                    $book_name=trim($_SESSION['keyword']);
                     $name_arr = explode(" ",$book_name); //用空格分解搜索内容
                     $num = count($name_arr);  //得到分解得到的信息条数
                     for($i=0; $i<$num; $i++)

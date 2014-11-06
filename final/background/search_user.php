@@ -68,9 +68,10 @@ form.submit();
           $conn=mysql_connect("localhost","syslab","syslab") or die("数据库服务器连接错误".mysql_error());
           mysql_select_db("test",$conn) or die("数据库访问错误".mysql_error());
           mysql_query("set names utf8");
+          $page = $_GET['page'];
           if ($page==""){//刚刚跳转入该页 清空原session
             unset($_SESSION['keyword']);
-            $keyword=$_POST['txt_keyword'];
+            $keyword=$keyword=$_POST['txt_keyword'];;
           }
            /*  当前页提交的搜索 $page初始化为1  */ 
           if($_POST[Submit]!=""){
@@ -91,9 +92,9 @@ form.submit();
                 {
                   $cnt ++;
                   if($cnt == 1)
-                      $info .= "where Username like '%$name_arr[$i]%' ";
+                      $info .= "where username like '%$name_arr[$i]%' ";
                   else
-                      $info .= "or Username like '%$name_arr[$i]%'";
+                      $info .= "or username like '%$name_arr[$i]%'";
                 }
              }
              if($cnt == 0){

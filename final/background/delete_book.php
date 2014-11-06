@@ -69,6 +69,7 @@ form.submit();
             $link=mysql_connect("localhost","syslab","syslab")or die("数据库服务器连接错误".mysql_error());//链接数据库
             mysql_select_db("test",$link) or die("数据库访问错误".mysql_error());    //选择数据库
             mysql_query("set names utf8");                                            //选择字符集标准格式
+            $page = $_GET['page'];
             if ($page==""){
                 unset($_SESSION['keyword']);
                 $keyword=$_POST['txt_keyword'];
