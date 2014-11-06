@@ -1,7 +1,7 @@
 <?php
     /*  链接数据库  */
     header("Content-Type:text/html; charset=utf-8");
-    $link=mysql_connect("localhost","root","676792")or die("数据库服务器连接错误".mysql_error());
+    $link=mysql_connect("localhost","syslab","syslab")or die("数据库服务器连接错误".mysql_error());
     mysql_select_db("test",$link) or die("数据库访问错误".mysql_error());    //选择数据库
     mysql_query("set names utf8");                                      //选择字符集标准格式
     $id=$_GET[id];
@@ -12,7 +12,6 @@
     if (file_exists($filename)) { 
     unlink($filename); 
     }
-    mysql_query("SET FOREIGN_KEY_CHECKS = 0");
      $sql1=mysql_query("delete from comment where bookid=$id"); 
     $sql=mysql_query("delete from books where bookid=$id");                  //删除书本信息
     if($sql){//删除成功跳转
