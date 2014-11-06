@@ -46,7 +46,7 @@
        	<form action="change.php" method="post" enctype="multipart/form-data">
                  <tr>
           <tr>
-		    <td style="text-align:center;"><h3 style="color:red;">首页轮播器图片修改</h3></td>
+		    <td style="text-align:center;"><h3 style="color:red;">首页轮播器图片修改(gif,jpg,png)</h3></td>
 		   </tr>
 		  <tr>
 		    <td><p style="margin-left:150px;">图片1：</p><input type="file"  name="filename1" style="margin:10px 0px 10px 150px;"> 
