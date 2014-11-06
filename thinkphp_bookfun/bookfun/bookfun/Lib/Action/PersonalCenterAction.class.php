@@ -47,7 +47,10 @@ class PersonalCenterAction extends Action
         	$upload->thumbPath = "./Public/Uploads/";//修改后上传图片的保存路径
         	$upload->thumbRemoveOrigin = true;
 			if(!$upload->upload())
-				$this->error($upload->getErrorMsg());
+			{
+				if(!(($upload->getErrorMsg())=="没有选择上传文件"))
+					$this->error($upload->getErrorMsg());
+			}
 			else
 				$info = $upload->getUploadFileInfo();
 			$old = $result['photo'];

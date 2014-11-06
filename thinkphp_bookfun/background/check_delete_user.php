@@ -10,7 +10,6 @@
      $filename=$row1->photo;
      $flag = ($filename == "default.jpg");
     $filename = "../bookfun/Public/Uploads/".$filename;
-<<<<<<< HEAD
     if (file_exists($filename)) { 
     	if(!$flag)
     		unlink($filename); 
@@ -18,12 +17,6 @@
 	mysql_query("SET FOREIGN_KEY_CHECKS = 0");
 	$sql=mysql_query("delete from collection where uid=$id");
 	$sql=mysql_query("delete from comment where uid=$id");
-=======
-    if (file_exists($filename)) {
-    if($filename!="deault.jpg") 
-    unlink($filename);
-    } 
->>>>>>> origin/master
 	$sql=mysql_query("delete from user where uid=$id");//删除信息
 	if($sql){	//删除成功跳转
 	echo "<script>alert('信息删除成功！');history.back();window.location.href=document.referrer;</script>";

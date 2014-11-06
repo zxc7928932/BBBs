@@ -9,9 +9,11 @@
     $row1=mysql_fetch_object($sql1);
     $filename=$row1->image;
     $filename = "../bookfun/Public/Uploads/".$filename;
-    if (file_exists($filename)) {
+    if (file_exists($filename)) { 
     unlink($filename); 
-    } 
+    }
+    mysql_query("SET FOREIGN_KEY_CHECKS = 0");
+     $sql1=mysql_query("delete from comment where bookid=$id"); 
     $sql=mysql_query("delete from books where bookid=$id");                  //删除书本信息
     if($sql){//删除成功跳转
         echo "<script>alert('信息删除成功！');history.go(-1);window.location.href=document.referrer;</script>";
