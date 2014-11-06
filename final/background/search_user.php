@@ -68,12 +68,21 @@ form.submit();
           $conn=mysql_connect("localhost","syslab","syslab") or die("数据库服务器连接错误".mysql_error());
           mysql_select_db("test",$conn) or die("数据库访问错误".mysql_error());
           mysql_query("set names utf8");
-          $keyword=$_POST['txt_keyword'];
-          /*  当前页提交的搜索 $page初始化为1  */      
+          if ($page==""){//刚刚跳转入该页 清空原session
+            unset($_SESSION['keyword']);
+            $keyword=$_POST['txt_keyword'];
+          }
+           /*  当前页提交的搜索 $page初始化为1  */ 
           if($_POST[Submit]!=""){
             $page=1;
-          }
-          $user_name=trim($keyword);
+            $keyword=$_POST['txt_keyword'];
+          }else if($_SESSION['keyword']!=""){//未提交搜索 且session不空 读入session
+            $keyword=$_SESSION['keyword'];
+          } 
+          
+          $_SESSION['keyword']=$keyword;//写入session
+              
+          $user_name=trim($_SESSION['keyword']);
           $name_arr = explode(" ",$user_name); //用空格分解搜索内容
           $num = count($name_arr);  //得到分解得到的信息条数
            for($i=0; $i<$num; $i++)

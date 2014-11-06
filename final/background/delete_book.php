@@ -66,25 +66,50 @@ form.submit();
                         
                       </tr>
           <?php
-          $link=mysql_connect("localhost","syslab","syslab")or die("数据库服务器连接错误".mysql_error());//链接数据库
+            $link=mysql_connect("localhost","syslab","syslab")or die("数据库服务器连接错误".mysql_error());//链接数据库
             mysql_select_db("test",$link) or die("数据库访问错误".mysql_error());    //选择数据库
             mysql_query("set names utf8");                                            //选择字符集标准格式
-            $keyword=$_POST[txt_keyword];
-          $sql=mysql_query("select * from books where bookname like '%$keyword%' or content like '%$keyword%'");
-          $message_count=mysql_num_rows($sql);//查询符合条件的记录总条数
-          $row=mysql_fetch_object($sql);
-          /*  $page为当前页，如果$page为空，则初始化为1  */
-          if($_POST[Submit]!=""){
-            $page=1;
+            if ($page==""){
+                unset($_SESSION['keyword']);
+                $keyword=$_POST['txt_keyword'];
+                }
+                /*  当前页提交的搜索 $page初始化为1  */ 
+                if($_POST[Submit]!=""){
+                $page=1;
+                $keyword=$_POST['txt_keyword'];
+                }else if($_SESSION['keyword']!=""){
+                $keyword=$_SESSION['keyword'];
+                } 
+          
+                $_SESSION['keyword']=$keyword;
+                     
+                 $user_name=trim($_SESSION['keyword']);
+                $book_name=trim($keyword);
+                $name_arr = explode(" ",$book_name); //用空格分解搜索内容
+                $num = count($name_arr);  //得到分解得到的信息条数
+                for($i=0; $i<$num; $i++)
+                {
+                    if(strlen($name_arr[$i]))
+                    {
+                    $cnt ++;
+                    if($cnt == 1)
+                        $info .= "where bookname like '%$name_arr[$i]%' ";
+                    else
+                        $info .= "or bookname like '%$name_arr[$i]%'";
+                    }
+                }
+             if($cnt == 0){
+               echo"请输入书名";
           }
-          $page = $_GET['page'];
           if ($page==""){
             $page=1;}
              if (is_numeric($page)){
-            $page_size=4;                     //每页显示4条记录        
+            $page_size=4;                     //每页显示4条记录  
+            $sql=mysql_query("select * from books  $info");
+            $message_count=mysql_num_rows($sql);      
             $page_count=ceil($message_count/$page_size);      //根据记录总数除以每页显示的记录数求出所分的页数
             $offset=($page-1)*$page_size;           //计算下一页从第几条数据开始循环  
-            $sql=mysql_query("select * from books where bookname like '%$keyword%' or content like '%$keyword%'  limit $offset,$page_size");
+            $sql=mysql_query("select * from books $info limit $offset,$page_size");
             $row=mysql_fetch_object($sql);
             if(!$row){
               echo "<font color='red'>暂无书籍信息!</font>";
