@@ -30,7 +30,7 @@ class PersonalCenterAction extends Action
 		}
 		else
 		{
-			$data['username'] = I('nickname','','htmlspecialchars');//获取表单提交的信息
+			$data['nickname'] = I('nickname','','htmlspecialchars');//获取表单提交的信息
 			$data['sex'] = I('sex','','htmlspecialchars');
 			$data['age'] = I('age','','htmlspecialchars');
 			$data['signature'] = I('signature','','htmlspecialchars');

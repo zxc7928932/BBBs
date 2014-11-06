@@ -26,8 +26,9 @@ class LoginAction extends Action
     	header("Content-Type:text/html; charset=utf-8");
     	$username = $this->_param('username');
     	$pwd = $this->_param('password1');
+        $nickname = $this->_param('nickname');
     	$User = D('user');
-    	if($User->register_user($username,$pwd))//调用用户注册函数
+    	if($User->register_user($username,$pwd,$nickname))//调用用户注册函数
     		$this->success('注册成功！',U('MainPage/main_page'));
     	else
     		$this->error('注册失败！');
