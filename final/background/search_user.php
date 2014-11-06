@@ -105,11 +105,11 @@ form.submit();
             $page=1;}
              if (is_numeric($page)){
             $page_size=4;                     //每页显示4条记录
-            $sql=mysql_query("select * from register  $info");
+            $sql=mysql_query("select * from user  $info");
             $message_count=mysql_num_rows($sql);  
             $page_count=ceil($message_count/$page_size);      //根据记录总数除以每页显示的记录数求出所分的页数
             $offset=($page-1)*$page_size;           //计算下一页从第几条数据开始循环  
-            $sql=mysql_query("select * from register $info limit $offset,$page_size");
+            $sql=mysql_query("select * from user $info limit $offset,$page_size");
             $row=mysql_fetch_object($sql);
             if(!$row){
               echo "<font color='red'>暂无书籍信息!</font>";
