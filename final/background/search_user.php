@@ -68,9 +68,10 @@ form.submit();
           $conn=mysql_connect("localhost","syslab","syslab") or die("数据库服务器连接错误".mysql_error());
           mysql_select_db("test",$conn) or die("数据库访问错误".mysql_error());
           mysql_query("set names utf8");
+          $page = $_GET['page'];
           if ($page==""){//刚刚跳转入该页 清空原session
             unset($_SESSION['keyword']);
-            $keyword=$_POST['txt_keyword'];
+            $keyword=$keyword=$_POST['txt_keyword'];;
           }
            /*  当前页提交的搜索 $page初始化为1  */ 
           if($_POST[Submit]!=""){
@@ -91,9 +92,9 @@ form.submit();
                 {
                   $cnt ++;
                   if($cnt == 1)
-                      $info .= "where Username like '%$name_arr[$i]%' ";
+                      $info .= "where username like '%$name_arr[$i]%' ";
                   else
-                      $info .= "or Username like '%$name_arr[$i]%'";
+                      $info .= "or username like '%$name_arr[$i]%'";
                 }
              }
              if($cnt == 0){
@@ -104,11 +105,11 @@ form.submit();
             $page=1;}
              if (is_numeric($page)){
             $page_size=4;                     //每页显示4条记录
-            $sql=mysql_query("select * from register  $info");
+            $sql=mysql_query("select * from user  $info");
             $message_count=mysql_num_rows($sql);  
             $page_count=ceil($message_count/$page_size);      //根据记录总数除以每页显示的记录数求出所分的页数
             $offset=($page-1)*$page_size;           //计算下一页从第几条数据开始循环  
-            $sql=mysql_query("select * from register $info limit $offset,$page_size");
+            $sql=mysql_query("select * from user $info limit $offset,$page_size");
             $row=mysql_fetch_object($sql);
             if(!$row){
               echo "<font color='red'>暂无书籍信息!</font>";
