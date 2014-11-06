@@ -57,9 +57,7 @@ function check7(form){
     form.submit();
 }
 function check1(form){
-    if(escape(form.username.value).indexOf("%u")>=0){   
-        alert("用户名包含中文请，输入全英文");  
-        }  
+   
     if(form.username.value==""){
         alert("请输入用户名!");form.username.focus();return false;
     }
@@ -67,7 +65,7 @@ function check1(form){
     if(form.username.value.length>15){
         alert("用户名过长!");form.username.focus();return false;
     }
-    if(form.username.value.length<5){
+    if(form.username.value.length<3){
         alert("用户名过短!");form.username.focus();return false;
     }
 
@@ -102,9 +100,7 @@ function check3(form){
     if(form.password1.value.length<5){
         alert("密码过短!");form.password1.focus();return false;
     }
-    if(escape(form.username.value).indexOf("%u")>=0){   
-        alert("用户名包含中文请，输入全英文");  
-        }  
+    
     if(form.username.value==""){
         alert("请输入用户名!");form.username.focus();return false;
     }
@@ -112,7 +108,7 @@ function check3(form){
     if(form.username.value.length>15){
         alert("用户名过长!");form.username.focus();return false;
     }
-    if(form.username.value.length<5){
+    if(form.username.value.length<3){
         alert("用户名过短!");form.username.focus();return false;
     }
 }
