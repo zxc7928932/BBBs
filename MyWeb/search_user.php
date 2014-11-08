@@ -67,7 +67,7 @@ form.submit();
 					do{
 					?>
                       <tr bgcolor="#FFFFFF">
-                        <td><td><?php echo $row->Username;?></td>
+                      <td><?php echo $row->Username;?></td>
                         <td><?php echo $row->singing; ?></td>
                           <td align="center"><a href="check_delete_user.php?id=<?php echo $row->uid;?>"><img src="images/delete.gif" width="22" height="22" border="0"></a></td>
                       </tr>

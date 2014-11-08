@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Book title</title>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/master.css" rel="stylesheet">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css"></style>
+</head>
+<body>
+       <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+         
+          </button>
+            <a class="navbar-brand" href="home.php" style="font-size:25px;font-weight:bold;color:#AAAAAA;">
+            Book.fun
+              
+            </a> 
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background:  #0F0F0F;">
+
+           <ul class="nav navbar-nav">
+              <li > 
+              <a href="home.php">
+                <span class="glyphicon glyphicon-home"></span>
+                 首页
+              </a>
+               </li>
+              <li> <a href="upload.php">
+                    <span class="glyphicon glyphicon-cloud-upload"></span>
+
+                     上传书籍
+                   </a> 
+              </li>
+           </ul>
+
+           <form class="navbar-form navbar-right" role="search" action="../action/search.php" method="post">
+
+              <div class="form-group" id="nav-search">
+                 <input type="text" name="txt_book" class="form-control" style="width:400px;" placeholder="请输入您想查找的书籍...."/>
+              </div>
+
+              <button type="submit" name="submit" value="submit"class="btn btn-primary" style="float:right;margin-right:20px;"><span class="glyphicon glyphicon-search"></span> 搜索 </button>
+           </form>
+
+          <ul class="nav navbar-nav navbar-right">
+
+           <li >
+              <a href="center.php">
+                <span class="glyphicon glyphicon-user">
+                  个人中心
+              </a> 
+            </li>
+
+             <li >
+              <a href="../action/logout.php">
+                <span class="glyphicon glyphicon-off">
+                退出账户
+              </a> 
+            </li>
+
+           </ul>
+      </div>
+   </nav>
+<?php 
+    session_start();
+    $link=mysql_connect("localhost","root","zxc7928932")or die("数据库服务器连接错误".mysql_error());//链接数据库
+    mysql_select_db("guestinfo",$link) or die("数据库访问错误".mysql_error());    //选择数据库
+    mysql_query("set names utf-8");                                            //选择字符集标准格式
+    $sql=mysql_query("select * from books where id =$id");                      //检索书籍
+    $row=mysql_fetch_object($sql);
+    $uid=$_SESSION['number'];
+    
+
+    $result=mysql_query("select * from collection where user=$uid and book=$id");
+    $num = mysql_num_rows($result);
+    $_SESSION['boo_id']=$id;
+    
+?>
+    <div class="container center-container">
+
+        <div class="row clearfix">
+            <div class="col-md-12 column heading">
+                <h1><?php echo $row->bookname ?></h1>
+            </div>
+        </div>
+        <!-- row -->
+
+        <div class="row clearfix">
+            <div class="col-md-4 column">
+                <div id="mainpic" class="">
+                    <a class="nbg" href="http://img3.douban.com/lpic/s27457804.jpg" title="<?php echo $row->bookname ?>">
+                        <img src="<?php echo $row->image ?>" title="点击看大图" alt="<?php echo $row->bookname ?>" rel="v:photo"></a>
+                </div>
+            </div>
+
+            <div class="col-md-6 column">
+                <div id="info" class="">
+                    <span>
+                        <span class="pl">作者</span>
+                        :
+                        <a class="" href="/search/%E6%9D%89%E6%B5%A6%E5%BA%B7%E5%B9%B3%20%E7%BC%96%E8%91%97"><?php echo $row->author."编著" ?> </a>
+                    </span>
+                    <br>
+                    <span class="pl">出版社:</span>
+            <?php echo $row->press."出版" ?>
+                    <br>
+                  
+                    <br>
+                </div>
+            </div>
+
+
+            <div class="col-md-2 column">
+            <?php if($num==0){ ?>
+             <a href="../action/collection.php?id=<?php echo $row->id;?>" class="btn btn-default" role="button">收藏</a></p>
+             <?php }
+             else{ ?>
+               <a href="../action/delete_collection.php?id=<?php echo $row->id;?>" class="btn btn-default" role="button">取消收藏</a></p>
+             <?php }?>
+            </div>
+        </div>
+        <!-- row -->
+
+        <div class="subject clearfix"></div>
+
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="related_info">
+                    <h2>
+                        <span class="">内容简介</span>
+                        &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+                    </h2>
+                    <div class="intro">
+                        <p><?php echo $row->bookname ?></p>
+                        <p>分类:<?php echo $row->classify?></p>
+                        <p>让我们走进这本书籍的世界</p>
+                        <p>◎内容简介</p>
+                        <p>
+                           <?php echo $row->content?>
+                        </p>
+            
+                    </div>
+
+                    <div class="reviews">
+
+                        <div class="clearfix ">
+                            <h2>书评&nbsp;&nbsp;· · · · · ·&nbsp;</h2>
+
+                            <ul class="nav nav-pills comment-right">
+                                <li class="active">
+                                    <a href="#">
+                                        <span class="badge pull-right"></span>
+                                        全部评论
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#comment-editor">
+                                        <span class="badge pull-right"></span>
+                                        我来评论这本书
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="comment-box">
+                            <div id="js-comment-box"> 
+<?php 
+    $sql1=mysql_query("select * from comment where book_id= $id order by comment_id desc ");                        //检索评论
+    $row1=mysql_fetch_object($sql1);
+    $num=mysql_num_rows($sql1);
+    if($num<3){
+    for($i=0;$i<$num;$i++){
+    $sql2=mysql_query("select * from register where uid='$row1->user'");
+    $row2=mysql_fetch_object($sql2);
+?>
+                            <div class="comment">
+                                <div class="comment-title">
+                                    <div class="image">
+                                      
+                                            <img src=<?php echo $row2->Photo;?> alt="user image"><?php echo $row2->nickname?></a>
+                                    </div>
+                                </div>
+                                <div class="comment-message">
+                                    <p>
+                                        <?php echo $row1->content?>
+                                    </p>
+                                </div>
+                            </div>
+                            
+
+<?php 
+    $row1=mysql_fetch_object($sql1);
+    }
+}
+else
+ for($i=0;$i<3;$i++){
+    $sql2=mysql_query("select * from register where uid='$row1->user'");
+    $row2=mysql_fetch_object($sql2);
+?>
+                            <div class="comment">
+                                <div class="comment-title">
+                                    <div class="image">
+                                      
+                                            <img src=<?php echo $row2->Photo;?> alt="user image"><?php echo $row2->nickname?></a>
+                                    </div>
+                                </div>
+                                <div class="comment-message">
+                                    <p>
+                                        <?php echo $row1->content?>
+                                    </p>
+                                </div>
+                            </div>
+                            
+
+<?php 
+    $row1=mysql_fetch_object($sql1);
+    }
+?>
+                    </div>
+                    <div class="comment-footer">
+                        <a class="js-more-discussion" href="javascript:;">显示更早的讨论</a>
+                    </div>
+
+                        </div>
+                        <!-- box --> </div>
+                    <!-- reviews --> </div>
+                <!-- related --> </div>
+            <!-- column --> </div>
+        <!-- row -->
+
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div id="comment-editor" class='box' style="margin-top:60px;">
+                    <div class='box-header'>
+                        <h3 class='box-title'>
+                            评论
+                            <small></small>
+                        </h3>
+                        <div class="pull-right box-tools">
+
+                            <!-- tools box --> </div>
+                        <!-- /.box-header -->
+                        <div class='box-body pad' >
+                            <form name="form1"action="../action/setcomment.php" method="post" >
+                                <textarea name="comment" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                <div class="footer" style="margin-top:10px;">
+                                    <button type="submit" class="btn btn-success" onClick="return check1(form1);">提交</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- row --> </div>
+    <!-- container -->
+    <!-- <div class="col-md-4 column">这里是啥来着。。忘了</div>
+-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+            var comment_count = 3;
+            $(function() {
+                //bootstrap WYSIHTML5 - text editor
+                $(".textarea").wysihtml5();
+
+                $(".js-more-discussion").click( function(){  
+                        $.getJSON("../action/showmore.php",  {bookid:<?php echo $row->id;?>, cnt: comment_count},
+                               function(data){
+                                    comment_count += data.length; 
+
+                                    $.each(data, function(i,item){
+                                        content = '<div class="comment"><div class="comment-title"><div class="image"><a ' + 
+                                         ' title="' + 
+                                        item.nickname +  '"> <img src="'+
+                                        item.image_url +  '" alt="user image">' + 
+                                        item.nickname + 
+                                        '</a></div></div><div class="comment-message">' + 
+                                        '<p>'+ item.comment + '</p>'
+                                        '</div></div>';
+
+                                        $("#js-comment-box").append(content);  
+                                    })
+                                  })
+
+                }); 
+
+            });
+
+
+
+        </script>
+</body>
+</html>
+<script language="javascript">                                              //检测各信息是否正确
+/*检测各值是否为空*/
+function check1(form){
+    if(form.comment.value==""){
+        alert("请输入评论");form.comment.focus();return false;
+    }
+     
+    if(form.comment.value.length>250){
+        alert("评论过长!");form.comment.focus();return false;
+    }
+    if(form.comment.value.length<5){
+        alert("评论过短!");form.comment.focus();return false;
+    }
+}
+</script>

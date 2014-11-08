@@ -32,6 +32,8 @@
 	echo "<script> alert('您输入的密码不正确!');window.location.href='login.php';</script>";
 	}
 	else {										//密码正确，转至主页
+		$_SESSION['number']=$info->uid;	//用户编号存入session
+		
 		echo "<script> alert('登录成功，点击跳转主页!');window.location.href='main.php';</script>";
 	}
 }

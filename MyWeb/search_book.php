@@ -67,7 +67,7 @@ form.submit();
 					do{
 					?>
                       <tr bgcolor="#FFFFFF">
-                        <td><td><?php echo $row->bookname;?></td>
+                        <td><?php echo $row->bookname;?></td>
                         <td><?php echo chinesesubstr($row->content, 0, 30);
                         if(strlen($row->content)>30)
                         echo "...";

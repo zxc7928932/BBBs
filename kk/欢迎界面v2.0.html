@@ -1,0 +1,159 @@
+<html>
+<head>
+    <title>欢迎来到book.fun</title>
+
+    <meta charset="UTF-8">
+    <meta name="Author" content="Soleil-kk">
+    <meta name="Keywords" content="book.fun">
+    <meta name="Description" content="兴趣书籍论坛">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="css/master.css" rel="stylesheet">
+
+    
+    <style type="text/css">
+        
+        body { 
+            background-image: url(img/bg_x1.png); 
+
+            width:1349px;               
+            height: 500px;
+            background-repeat: repeat-x;
+        } 
+       img{
+            margin-top:50px;
+            margin-left: 150px; 
+            width:180px;
+            height: 180px;
+        }
+        #title{
+            background-image: url(img/141391119970924.gif);
+            margin-left:50px;
+            margin-top:50px;
+            
+            width:960px;
+            height:190px;
+        }
+        #ddd{
+            display: inline;
+        }
+        
+        
+    </style>
+
+    
+
+
+</head>
+
+<body >
+  
+<div id="title">
+    
+</div>
+
+<div id="login-box" class="box box-primary login-sginup-box" style="position:fixed; right:35%; top:150px; visibility:hidden;border:2px solid #AEEEEE;" >
+                                <div class="box-header">
+                                    <h3 class="box-title" style="font-weight:bold;font-size:25px;">欢迎登录</h3>
+                                     <div class="pull-right box-tools">
+                                        <button id="close" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                    </div>
+                                </div><!-- /.box-header -->
+                                <!-- form start -->
+                                <form role="form">
+    <div class="box-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">邮箱</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                            <!-- <p class="err-p">出错信息<p> -->
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">密码</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                        </div>
+
+
+                                    </div>
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block">登录</button>
+                                    </div>
+
+                                </form>
+                            </div>
+
+
+<div id="signup-box" class="box box-primary login-sginup-box" style="position:fixed; right:35%; top:150px; visibility:hidden;border:2px solid #AEEEEE;" >
+                                <div class="box-header">
+                                    <h3 class="box-title" style="font-weight:bold;font-size:25px;">欢迎注册</h3>
+                                    <div class="pull-right box-tools">
+                                        <button id="close" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                    </div>
+                                </div><!-- /.box-header -->
+                                <!-- form start -->
+                                <form role="form">
+    <div class="box-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">邮箱</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                            <!-- <p class="err-p">出错信息<p> -->
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">密码</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">确认密码</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                                        </div>
+
+                                    </div>
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block">提交</button>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+
+<img src="img/141391232975391.gif" style="margin-left:100px;width:960;height:64px;">
+
+<div sytle="position: relative; ">
+
+
+    <img src="img/s27401345.jpg"  class="img-circle" style="margin-left:255px;">
+    <img src="img/s27401489.jpg"  class="img-circle" >
+    <img src="img/s27356225.jpg"  class="img-circle" >
+    <button id="login" type="button" class="btn btn-primary btn-lg" style="margin-left:20px;margin-top:200px;">登录</button>
+    <button id="signup"  type="button" class="btn btn-danger btn-lg" style="margin-left:10px;margin-top:200px;">注册</button>
+
+    
+</div>
+
+
+
+<p>
+
+</p>
+<script src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+            $(function() {
+                $("#login").click( function(){  
+                $('#login-box').css('visibility','visible');
+                $('#signup-box').css('visibility','hidden');
+            });
+                $("#signup").click( function(){  
+                $('#login-box').css('visibility','hidden');
+                $('#signup-box').css('visibility','visible');
+            });
+             $(".btn-sm").click( function(){  
+                $('#login-box').css('visibility','hidden');
+                $('#signup-box').css('visibility','hidden');
+            });
+
+    });
+</script>
+
+</body>
+    
+</html>

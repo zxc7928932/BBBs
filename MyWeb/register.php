@@ -13,7 +13,7 @@
    <table width="500" align="center">
      <tr>
 	 <td>
-     <form  name="form1" action="register1.php" method="post">
+     <form   role="form" enctype="multipart/form-data" action="register1.php" method="post">
 	 <fieldset>
 	 <legend>»¶Ó­×¢²á</legend>
 	  <table border="0" cellpadding="10"  cellspacing="0" width="400" align="center" >
@@ -49,7 +49,7 @@
 		<tr>
 		    <td>ÕÕÆ¬ÉÏ´«:</td>
 		    <td>
-		    <input type="file" name="pic"/ >
+		    <input type="file"  name="filename">
 			</td>
 		</tr>
 		<tr>

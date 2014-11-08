@@ -4,7 +4,7 @@
 	$checks=$_POST["checks"];				
 	if($checks==""){
 	//验证码为空，回跳
-	echo "<script> alert('请输入验证码!');window.location.href='login.php';</script>";
+	echo "<script> alert('请输入验证码!');window.location.href='main.php';</script>";
 }
 	else{	
 	if($checks==$_SESSION[check_checks]){     //检测验证码是否正确
@@ -21,7 +21,7 @@
 		echo "<script> alert('用户名不存在!');window.location.href='main.php';</script>";
 	}
 	else {				//用户名存在，检测密码是否正确
-		if($password!=$info->Password){			//密码错误，跳转回登陆页
+		if($password!=$info->ad_password){			//密码错误，跳转回登陆页
 	echo "<script> alert('您输入的密码不正确!');window.location.href='main.php';</script>";
 	}
 	else {										//密码正确，转至主页
