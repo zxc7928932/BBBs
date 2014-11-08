@@ -1,0 +1,101 @@
+bs_show.html/U('BookCenter/pro_comment')
+{
+	"comment": ;
+}
+upload_show.html/U('BookCenter/upload')
+{
+	"bookname":呐喊;
+	"author":鲁迅;
+	"classify":小说;
+	"press":电子科大出版社;
+	"content":鲁迅小说集《呐喊》，作品真实地描绘了从辛亥革命到五四运动时期的社会生活，从革命民主主义出发，抱着启蒙主义目的和人道主义精神，揭示了种种深层次的社会矛盾，对中国旧有制度及陈腐的传统观念进行了深刻的剖析和比较彻底的否定。
+	"image":;
+}
+index.html/U('Login/login')
+{
+	"txt_user":renzimu;
+	"xt_pwd":123456;
+}
+index.html/U('Login/register')
+{
+	"username":renzimu;
+	"password1":123456;
+	"password2":123456;
+}
+center_show.html/U('PersonalCenter/alter_data')
+{
+	"nickname":renzimu;
+	"sex":男;
+	"age":21;
+	"signature":dododododo;
+	"filename":;
+}
+
+U('BookCenter/search_book')/search_book.html
+{
+	"search_info":;
+	"bookname":;
+	"author":;
+	"dir":;
+	"myURL":;
+	"info":;
+	"page":;
+}
+U('BookCenter/bs_show')/bs_show.html
+{
+	"bookname":;
+	"author":;
+	"myURL":;
+	"info":;
+	"classify":;
+	"content":;
+	"comment_info":;
+	"username":;
+	"page":;
+}
+U('BookCenter/hot_book')/hot_book.html
+{
+	"hot_info":;
+	"bookname":;
+	"author":;
+	"dir":;
+	"myURL":;
+	"info":;
+	"page":;
+}
+U('MainPage/main_page')/main_page.html
+{
+	"info1":;
+	"info2":;
+	"bookname":;
+	"author":;
+	"myURL":;
+	
+}
+U('MainPage/classify')/classify.html
+{
+	"search_info":;
+	"bookname":;
+	"author":;
+	"dir":;
+	"myURL":;
+	"info":;
+	"page":;
+}
+U('PersonalCenter/center_show')/center_show.html
+{
+	"username":;
+	"sex":;
+	"age":;
+	"signature":;
+}
+U('PersonalCenter/my_collection')/my_collection.html
+{
+	"search_info":;
+	"bookname":;
+	"author":;
+	"dir":;
+	"myURL":;
+	"info":;
+	"page":;
+}
